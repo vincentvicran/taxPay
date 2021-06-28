@@ -5,28 +5,28 @@
 
 @keyframes forTitle {
     0% {
-        color: rgb(213, 255, 174);
-        box-shadow: 6px 10px 11px 1px rgb(213, 255, 174);
-        -webkit-box-shadow: 6px 10px 11px 1px rgb(213, 255, 174);
-        -moz-box-shadow: 6px 10px 11px 1px rgb(213, 255, 174);
+        color: rgb(132, 58, 252);
+        box-shadow: 6px 10px 11px 1px rgb(132, 58, 252);
+        -webkit-box-shadow: 6px 10px 11px 1px rgb(132, 58, 252);
+        -moz-box-shadow: 6px 10px 11px 1px rgb(132, 58, 252);
     }
     25% {
-        color: rgb(211, 211, 211);
-        box-shadow: 6px 10px 11px 1px rgb(211, 211, 211);
-        -webkit-box-shadow: 6px 10px 11px 1px rgb(211, 211, 211);
-        -moz-box-shadow: 6px 10px 11px 1px rgb(211, 211, 211);
+        color: rgb(118, 35, 201);
+        box-shadow: 6px 10px 11px 1px rgb(118, 35, 201);
+        -webkit-box-shadow: 6px 10px 11px 1px rgb(118, 35, 201);
+        -moz-box-shadow: 6px 10px 11px 1px rgb(118, 35, 201);
     }
     50% {
-        color: rgb(166, 178, 248);
-        box-shadow: 6px 10px 11px 1px rgb(166, 178, 248);
-        -webkit-box-shadow: 6px 10px 11px 1px rgb(166, 178, 248);
-        -moz-box-shadow: 6px 10px 11px 1px rgb(166, 178, 248);
+        color: rgb(96, 25, 155);
+        box-shadow: 6px 10px 11px 1px rgb(96, 25, 155);
+        -webkit-box-shadow: 6px 10px 11px 1px rgb(96, 25, 155);
+        -moz-box-shadow: 6px 10px 11px 1px rgb(96, 25, 155);
     }
     100% {
-        color: rgb(99, 0, 197);
-        box-shadow: 6px 10px 11px 1px rgb(99, 0, 197);
-        -webkit-box-shadow: 6px 10px 11px 1px rgb(99, 0, 197);
-        -moz-box-shadow: 6px 10px 11px 1px rgb(99, 0, 197);
+        color: rgb(67, 11, 122);
+        box-shadow: 6px 10px 11px 1px rgb(67, 11, 122);
+        -webkit-box-shadow: 6px 10px 11px 1px rgb(67, 11, 122);
+        -moz-box-shadow: 6px 10px 11px 1px rgb(67, 11, 122);
     }
 }
 
