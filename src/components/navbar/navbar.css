@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* font-family: 'Montserrat', sans-serif; */
+
+.navbar {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(56, 12, 87);
+    align-items: center;
+    padding: 20px 10%;
+    margin: 0;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    color: #edf0f1;
+    padding: 0 0 10px 20px;
+    margin: 5px auto 0 0;
+}
+
+.titleName {
+    margin-left: 5px;
+    padding: 8px;
+    font-weight: bold;
+    border: 1px solid rgb(94, 85, 136);
+    border-radius: 9px 0 9px 9px;
+}
+
+.navbarMenu {
+    list-style: none;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-weight: 360;
+}
+
+.navbarMenu li {
+    display: inline-block;
+    padding: 10px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li,
+.navbarItems,
+button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+}
+.navbarMenu li .navbarItems {
+    transition: all 0.3s ease 0s;
+}
+
+li:hover {
+    color: #99d1ff;
+}
+
+button {
+    height: 34px;
+    margin-left: 10px;
+    padding: 3px 12px;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+button:hover {
+    background-color: rgba(0, 136, 169, 0.7);
+}
+
+.registerButton,
+.settingsButton {
+    border-radius: 7px 0 7px 7px;
+}
+
+.loginButton {
+    border-radius: 7px 7px 7px 0;
+}

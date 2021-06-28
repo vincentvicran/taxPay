@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    flex: 5;
+    /* margin: 10px; */
+}
+
+.link {
+    text-decoration: none;
+    color: rgb(77, 77, 77);
+}
