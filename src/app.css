@@ -8,3 +8,10 @@
     text-decoration: none;
     color: rgb(77, 77, 77);
 }
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border: none;
+}

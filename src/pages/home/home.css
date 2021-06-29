@@ -72,7 +72,7 @@
 
 .homeTitle:hover {
     transition: all 0.3s ease 0s;
-    animation: forTitle 2s ease 0.5s infinite alternate;
+    animation: forTitle 2s ease 0s infinite alternate;
     font-size: 30px;
     font-weight: 900;
     color: rgb(99, 0, 197);
@@ -93,8 +93,8 @@
     padding: 10px;
     border: 1px solid rgb(99, 0, 197);
     border-radius: 7px 0 7px 7px;
-    transition: all 0.3s ease 0s;
-    animation: forTitle 2s ease 0.5s infinite alternate;
+    transition: all 0.5s ease 0s;
+    animation: forTitle 2s ease 0s infinite alternate;
 }
 
 .homeTaxrates {
@@ -107,5 +107,5 @@
     padding: 10px;
     border: 1px solid indigo;
     border-radius: 7px 0 7px 7px;
-    animation: forTitle 2s ease 0.5s infinite alternate;
+    animation: forTitle 2s ease 0s infinite alternate;
 }

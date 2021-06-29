@@ -5,6 +5,9 @@
     height: 50px;
     display: flex;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 999;
     background-color: rgb(56, 12, 87);
     align-items: center;
     padding: 20px 10%;

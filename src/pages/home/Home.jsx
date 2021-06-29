@@ -8,13 +8,13 @@ export default function Home() {
             <div className="homeGreeting">Namaste!</div>
             <div className="homeTitle">Vehicle Tax Collection System</div>
             <ol className="homeFunctions">
-                <Link to="/vehicles">
+                <Link to="/addvehicle">
                     <li className="homeFunctionItems">Register your vehicles.</li>
                 </Link>
-                <Link to="/insurances">
+                <Link to="/addinsurance">
                     <li className="homeFunctionItems">Include the insurance papers.</li>
                 </Link>
-                <Link to="/payments">
+                <Link to="/addpayment">
                     <li className="homeFunctionItems">Pay the required taxes.</li>
                 </Link>
             </ol>
