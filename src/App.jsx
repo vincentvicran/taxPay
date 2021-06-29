@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import Home from './pages/home/Home';
 import User from './pages/users/user/User';
-import { AddVehicle } from './pages/vehicles/Vehicles';
-import Vehicles from './pages/vehicles/Vehicles';
+import { Vehicles, AddVehicle } from './pages/vehicles/Vehicles';
+import { Insurances, AddInsurance } from './pages/insurances/Insurances';
 
 export default function App() {
     return (
@@ -22,6 +22,12 @@ export default function App() {
                 </Route>
                 <Route path="/addvehicle">
                     <AddVehicle />
+                </Route>
+                <Route path="/insurances">
+                    <Insurances />
+                </Route>
+                <Route path="/addinsurance">
+                    <AddInsurance />
                 </Route>
             </Switch>
         </Router>

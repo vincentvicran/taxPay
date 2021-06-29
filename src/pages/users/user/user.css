@@ -44,10 +44,7 @@ select:focus {
 }
 
 .userBody {
-    display: flex;
     margin: 0 10%;
-    padding: 20px;
-    flex-wrap: wrap;
 }
 
 .userTitleContainer {
@@ -83,11 +80,9 @@ select:focus {
 
 .userContainer {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
-    flex: 4;
-    margin-top: 12px;
+    margin: 10px;
+    padding-bottom: 10%;
 }
 
 .userShow,
@@ -98,9 +93,8 @@ select:focus {
     justify-content: center;
     flex-wrap: wrap;
     flex-direction: column;
-    height: 450px;
-    margin: 10px;
-    padding: 30px;
+    margin: 14px;
+    padding: 20px 35px;
     -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
 }
@@ -128,7 +122,6 @@ select:focus {
 
 .userShowTopTitle {
     display: flex;
-
     flex-direction: column;
     margin-left: 20px;
 }
@@ -170,6 +163,7 @@ select:focus {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-bottom: 20px;
     font-size: 23px;
     font-weight: 600;
     flex-wrap: wrap;
@@ -186,9 +180,7 @@ select:focus {
 
 .userUpdateLeft {
     display: flex;
-    flex: 50%;
     align-items: flex-start;
-    justify-content: center;
     flex-wrap: wrap;
     flex-direction: column;
 }
@@ -208,8 +200,6 @@ select:focus {
     font-size: 12px;
     font-weight: 400;
     background: transparent;
-    height: 25px;
-    width: 100%;
     border: none;
     color: gray;
     padding: 10px;

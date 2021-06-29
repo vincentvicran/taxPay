@@ -8,7 +8,7 @@ export default function Navbar({ isLoggedIn }) {
         <div className="navbar">
             <NavLink to="/" className="title">
                 <img className="logo" src={logo} alt="Tax Logo" />
-                <span className="titleName">Tax</span>
+                <span className="titleName">taxPay</span>
             </NavLink>
             <nav className="navbarMenu">
                 {!isLoggedIn && (

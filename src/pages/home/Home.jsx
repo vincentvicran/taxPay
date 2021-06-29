@@ -6,7 +6,7 @@ export default function Home() {
     return (
         <div className="home">
             <div className="homeGreeting">Namaste!</div>
-            <div className="homeTitle">Vehicle Tax Collection System</div>
+            <div className="homeTitle">taxPay</div>
             <ol className="homeFunctions">
                 <Link to="/addvehicle">
                     <li className="homeFunctionItems">Register your vehicles.</li>

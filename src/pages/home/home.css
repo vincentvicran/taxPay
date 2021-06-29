@@ -31,6 +31,10 @@
 }
 
 .home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     height: calc(100vh - 50px);
     padding: 0;
     font-family: 'Montserrat', sans-serif;
@@ -58,7 +62,7 @@
 }
 
 .homeTitle {
-    height: 12vh;
+    padding: 30px 80px;
     margin: 10px 20% 20px 20%;
     font-size: 28px;
     font-weight: 800;

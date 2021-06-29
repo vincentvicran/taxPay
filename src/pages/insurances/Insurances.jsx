@@ -1,53 +1,53 @@
 import React from 'react';
-import './vehicles.css';
+import './insurances.css';
 import { CalendarToday, ClosedCaption, Commute, PermIdentity, Ballot, EventAvailable } from '@material-ui/icons';
 import AddIcon from '@material-ui/icons/Add';
 import { Link } from 'react-router-dom';
 
-export function Vehicles() {
+export function Insurances() {
     return (
-        <div className="vehicles">
-            <div className="vehicleBody">
-                <div className="vehicleTitle">Vehicles</div>
-                <div className="vehicleContainer">
-                    <div className="vehicleShow">
-                        <span className="vehicleShowTitle">Vehicle Owner Name</span>
-                        <div className="vehicleShowInfo">
-                            <PermIdentity className="vehicleShowIcon" />
-                            <span className="vehicleShowInfoTitle">Vikrant Shrestha</span>
+        <div className="insurances">
+            <div className="insuranceBody">
+                <div className="insuranceTitle">insurances</div>
+                <div className="insuranceContainer">
+                    <div className="insuranceShow">
+                        <span className="insuranceShowTitle">insurance Owner Name</span>
+                        <div className="insuranceShowInfo">
+                            <PermIdentity className="insuranceShowIcon" />
+                            <span className="insuranceShowInfoTitle">Vikrant Shrestha</span>
                         </div>
 
-                        <span className="vehicleShowTitle">Vehicle Type</span>
-                        <div className="vehicleShowInfo">
-                            <Commute className="vehicleShowIcon" />
-                            <span className="vehicleShowInfoTitle">Two Wheeler</span>
+                        <span className="insuranceShowTitle">insurance Type</span>
+                        <div className="insuranceShowInfo">
+                            <Commute className="insuranceShowIcon" />
+                            <span className="insuranceShowInfoTitle">Two Wheeler</span>
                         </div>
 
-                        <span className="vehicleShowTitle">Vehicle Registration Date</span>
-                        <div className="vehicleShowInfo">
-                            <CalendarToday className="vehicleShowIcon" />
-                            <span className="vehicleShowInfoTitle">10.10.2072</span>
+                        <span className="insuranceShowTitle">insurance Registration Date</span>
+                        <div className="insuranceShowInfo">
+                            <CalendarToday className="insuranceShowIcon" />
+                            <span className="insuranceShowInfoTitle">10.10.2072</span>
                         </div>
 
-                        <span className="vehicleShowTitle">Vehicle Number</span>
-                        <div className="vehicleShowInfo">
-                            <Ballot className="vehicleShowIcon" />
-                            <span className="vehicleShowInfoTitle">Ba.49Pa.5</span>
+                        <span className="insuranceShowTitle">insurance Number</span>
+                        <div className="insuranceShowInfo">
+                            <Ballot className="insuranceShowIcon" />
+                            <span className="insuranceShowInfoTitle">Ba.49Pa.5</span>
                         </div>
 
-                        <span className="vehicleShowTitle">Engine Capacity</span>
-                        <div className="vehicleShowInfo">
-                            <ClosedCaption className="vehicleShowIcon" />
-                            <span className="vehicleShowInfoTitle">150</span>
+                        <span className="insuranceShowTitle">Engine Capacity</span>
+                        <div className="insuranceShowInfo">
+                            <ClosedCaption className="insuranceShowIcon" />
+                            <span className="insuranceShowInfoTitle">150</span>
                         </div>
 
-                        <span className="vehicleShowTitle">Latest Payment Date</span>
-                        <div className="vehicleShowInfo">
-                            <EventAvailable className="vehicleShowIcon" />
-                            <span className="vehicleShowInfoTitle">10.12.2077</span>
+                        <span className="insuranceShowTitle">Latest Payment Date</span>
+                        <div className="insuranceShowInfo">
+                            <EventAvailable className="insuranceShowIcon" />
+                            <span className="insuranceShowInfoTitle">10.12.2077</span>
                         </div>
                     </div>
-                    <Link to="/addvehicle" className="vehicleAddNew">
+                    <Link to="/addinsurance" className="insuranceAddNew">
                         <AddIcon />
                     </Link>
                 </div>
@@ -56,44 +56,44 @@ export function Vehicles() {
     );
 }
 
-export function AddVehicle() {
+export function AddInsurance() {
     return (
-        <div className="vehicles">
-            <div className="vehicleBody">
-                <div className="vehicleTitle">Register your vehicle</div>
-                <div className="vehicleAdd">
-                    <form className="vehicleAddForm">
-                        <div className="vehicleAddLeft">
-                            <div className="vehicleAddItem">
-                                <label className="vehicleShowTitle">Vehicle Owner Name</label>
-                                <input type="text" placeholder="Vikrant Shrestha" className="vehicleAddInput" />
+        <div className="insurances">
+            <div className="insuranceBody">
+                <div className="insuranceTitle">Register your insurance</div>
+                <div className="insuranceAdd">
+                    <form className="insuranceAddForm">
+                        <div className="insuranceAddLeft">
+                            <div className="insuranceAddItem">
+                                <label className="insuranceShowTitle">insurance Owner Name</label>
+                                <input type="text" placeholder="Vikrant Shrestha" className="insuranceAddInput" />
                             </div>
-                            <div className="vehicleAddItem">
-                                <label className="vehicleShowTitle">Vehicle Type</label>
-                                <input type="text" placeholder="Two Wheeler" className="vehicleAddInput" />
+                            <div className="insuranceAddItem">
+                                <label className="insuranceShowTitle">insurance Type</label>
+                                <input type="text" placeholder="Two Wheeler" className="insuranceAddInput" />
                             </div>
-                            <div className="vehicleAddItem">
-                                <label className="vehicleShowTitle">Vehicle Registration Date</label>
-                                <input type="date" className="vehicleAddInput" />
+                            <div className="insuranceAddItem">
+                                <label className="insuranceShowTitle">insurance Registration Date</label>
+                                <input type="date" className="insuranceAddInput" />
                             </div>
                         </div>
 
-                        <div className="vehicleAddRight">
-                            <div className="vehicleAddItem">
-                                <label className="vehicleShowTitle">Vehicle Number</label>
-                                <input type="text" placeholder="Ba.49Pa.5" className="vehicleAddInput" />
+                        <div className="insuranceAddRight">
+                            <div className="insuranceAddItem">
+                                <label className="insuranceShowTitle">insurance Number</label>
+                                <input type="text" placeholder="Ba.49Pa.5" className="insuranceAddInput" />
                             </div>
-                            <div className="vehicleAddItem">
-                                <label className="vehicleShowTitle">Engine Capacity</label>
-                                <input type="text" placeholder="150" className="vehicleAddInput" />
+                            <div className="insuranceAddItem">
+                                <label className="insuranceShowTitle">Engine Capacity</label>
+                                <input type="text" placeholder="150" className="insuranceAddInput" />
                             </div>
-                            <div className="vehicleAddItem">
-                                <label className="vehicleShowTitle">Latest Payment Date</label>
-                                <input type="date" className="vehicleAddInput" />
+                            <div className="insuranceAddItem">
+                                <label className="insuranceShowTitle">Latest Payment Date</label>
+                                <input type="date" className="insuranceAddInput" />
                             </div>
                         </div>
-                        <div className="vehicleAddBottom">
-                            <button className="vehicleAddButton">Update</button>
+                        <div className="insuranceAddBottom">
+                            <button className="insuranceAddButton">Update</button>
                         </div>
                     </form>
                 </div>
@@ -102,4 +102,4 @@ export function AddVehicle() {
     );
 }
 
-export default Vehicles;
+export default Insurances;

@@ -1,8 +1,8 @@
-.vehicles {
+.insurances {
     background-image: linear-gradient(to top right, rgb(213, 255, 174), rgb(211, 211, 211), rgb(166, 178, 248));
 }
 
-.vehicleBody {
+.insuranceBody {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,14 +11,14 @@
     flex-wrap: wrap;
 }
 
-.vehicleTitle {
+.insuranceTitle {
     display: flex;
     font-size: 30px;
     flex: 100%;
     padding: 0 20px 30px;
 }
 
-.vehicleContainer {
+.insuranceContainer {
     display: flex;
     flex: 3;
     align-items: center;
@@ -26,8 +26,8 @@
     flex-wrap: wrap;
 }
 
-.vehicleShow,
-.vehicleAddNew {
+.insuranceShow,
+.insuranceAddNew {
     display: flex;
     align-items: flex-start;
     justify-content: space-around;
@@ -41,14 +41,14 @@
     box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
 }
 
-.vehicleShowTitle {
+.insuranceShowTitle {
     font-size: 14px;
     font-weight: 600;
     color: indigo;
     padding: 0px;
 }
 
-.vehicleShowInfo {
+.insuranceShowInfo {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -56,44 +56,44 @@
     color: #444;
 }
 
-.vehicleShowIcon {
+.insuranceShowIcon {
     font-size: 16px !important;
 }
 
-.vehicleShowInfoTitle {
+.insuranceShowInfoTitle {
     margin-left: 10px;
 }
 
-.vehicleAddNew {
+.insuranceAddNew {
     align-items: center;
 }
 
-.vehicleAdd {
+.insuranceAdd {
     width: 600px;
     padding: 20px;
     -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
 }
 
-.vehicleAddForm {
+.insuranceAddForm {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 20px;
 }
 
-.vehicleAddItem {
+.insuranceAddItem {
     display: flex;
     flex-direction: column;
     margin: 25px;
 }
 
-.vehicleAddItem > label {
+.insuranceAddItem > label {
     margin-top: 8px;
     font-size: 14px;
 }
 
-.vehicleAddInput {
+.insuranceAddInput {
     font-size: 12px;
     font-weight: 400;
     background: transparent;
@@ -105,7 +105,7 @@
     border-bottom: 1px solid gray;
 }
 
-.vehicleAddBottom {
+.insuranceAddBottom {
     display: flex;
     flex: 100%;
     align-items: center;
@@ -113,7 +113,7 @@
     padding: 42px 0 20px;
 }
 
-.vehicleAddButton {
+.insuranceAddButton {
     border-radius: 7px 0 7px 7px;
     border: none;
     padding: 10px;
