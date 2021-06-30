@@ -1,16 +1,19 @@
 import React from 'react';
-import {
-    CalendarToday,
-    ExitToAppTwoTone,
-    LocationSearching,
-    MailOutline,
-    PermIdentity,
-    PhoneAndroid,
-} from '@material-ui/icons';
-import './user.css';
+import { ExitToAppTwoTone } from '@material-ui/icons';
+import '../shared/styles/users.css';
 import { Link } from 'react-router-dom';
+import { UserItem } from '../components/userItem/UserItem';
 
-function User() {
+function Profile() {
+    const user = {
+        id: '1',
+        userName: 'vincy07',
+        role: 'user',
+        userEmail: 'vvicran@gmail.com',
+        userDOB: '10.10.1998',
+        userContact: '9813996688',
+        userAddress: 'USA',
+    };
     return (
         <div className="user">
             <div className="userBody">
@@ -24,43 +27,7 @@ function User() {
                     </Link>
                 </div>
                 <div className="userContainer">
-                    <div className="userShow">
-                        <div className="userShowTop">
-                            <img
-                                src="https://image.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg"
-                                alt=""
-                                className="userShowImg"
-                            />
-                            <div className="userShowTopTitle">
-                                <span className="userShowUsername">vincy07</span>
-                                <span className="userShowUserTitle">User</span>
-                            </div>
-                        </div>
-                        <div className="userShowBottom">
-                            <span className="userShowTitle">Account Details</span>
-                            <div className="userShowInfo">
-                                <PermIdentity className="userShowIcon" />
-                                <span className="userShowInfoTitle">vincy07</span>
-                            </div>
-                            <div className="userShowInfo">
-                                <CalendarToday className="userShowIcon" />
-                                <span className="userShowInfoTitle">10.10.1998</span>
-                            </div>
-                            <span className="userShowTitle">Contact Details</span>
-                            <div className="userShowInfo">
-                                <PhoneAndroid className="userShowIcon" />
-                                <span className="userShowInfoTitle">9841999999</span>
-                            </div>
-                            <div className="userShowInfo">
-                                <MailOutline className="userShowIcon" />
-                                <span className="userShowInfoTitle">vincy07@gmail.com</span>
-                            </div>
-                            <div className="userShowInfo">
-                                <LocationSearching className="userShowIcon" />
-                                <span className="userShowInfoTitle">USA</span>
-                            </div>
-                        </div>
-                    </div>
+                    <UserItem user={user} />
                     <div className="userUpdate">
                         <div className="userUpdateTitle">Details</div>
 
@@ -113,4 +80,4 @@ function User() {
     );
 }
 
-export default User;
+export default Profile;
