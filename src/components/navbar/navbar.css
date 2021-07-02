@@ -88,7 +88,8 @@ button:hover {
 }
 
 .registerButton,
-.settingsButton {
+.profileButton {
+    margin-left: 10px;
     border-radius: 7px 0 7px 7px;
 }
 

@@ -1,7 +1,9 @@
 import React from 'react';
 import { createPortal } from 'react-dom';
+import Login from '../auth/components/Login';
+import './modal.css';
 
-function Modal() {
+function Modal(props) {
     return createPortal(
         <div className="modal">
             <div className="modalContainer">
@@ -9,8 +11,7 @@ function Modal() {
                     <h1 className="modalTitle">Header</h1>
                     <div className="modalTopRight">Close</div>
                 </div>
-                <div className="modalBody">Body</div>
-                <div className="modalFooter">Footer</div>
+                {props.login && <Login />}
             </div>
         </div>,
         document.querySelector('#modal')

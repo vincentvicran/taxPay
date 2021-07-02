@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export default axios.create({
-    baseURL: 'https://vehicle-tax-system.herokuapp.com/',
+    baseURL: 'https://tax-pay.herokuapp.com/',
     headers: {
         'Content-type': 'application/json',
     },

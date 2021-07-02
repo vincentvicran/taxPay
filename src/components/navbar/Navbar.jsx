@@ -36,7 +36,7 @@ export default function Navbar({ isLoggedIn }) {
                             <li>Payments</li>
                         </NavLink>
                         <NavLink to="/profile" className="navbarItems">
-                            <button className="settingsButton">Profile</button>
+                            <button className="profileButton">Profile</button>
                         </NavLink>
                     </ul>
                 )}

@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ExitToAppTwoTone } from '@material-ui/icons';
 import '../shared/styles/users.css';
 import { Link } from 'react-router-dom';
 import { UserItem } from '../components/userItem/UserItem';
+import axios from 'axios';
 
 function Profile() {
+    useEffect(() => {
+        axios
+            .get('https://tax-pay.herokuapp.com/api/v1/users/me')
+            .then((res) => {
+                console.log(res, res.message);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }, []);
+
     const user = {
         id: '1',
         userName: 'vincy07',
@@ -69,6 +81,10 @@ function Profile() {
                                 <div className="userUpdateItem">
                                     <label className="userShowTitle">New Password</label>
                                     <input type="text" placeholder="New Password" className="userUpdateInput" />
+                                </div>
+                                <div className="userUpdateItem">
+                                    <label className="userShowTitle">Confirm Password</label>
+                                    <input type="text" placeholder="Confirm Password" className="userUpdateInput" />
                                 </div>
                                 <button className="userUpdateButton">Update</button>
                             </div>

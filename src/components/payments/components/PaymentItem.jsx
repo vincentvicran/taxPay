@@ -1,5 +1,5 @@
 import React from 'react';
-import { PermIdentity, Ballot, EventAvailable, EditSharp, Image, AttachMoney } from '@material-ui/icons';
+import { PermIdentity, Ballot, EventAvailable, Image, AttachMoney } from '@material-ui/icons';
 import '.././shared/styles/payments.css';
 
 function PaymentItem({ payment }) {
@@ -32,10 +32,10 @@ function PaymentItem({ payment }) {
                     <EventAvailable className="paymentShowIcon" />
                     <span className="paymentShowInfoTitle">{payment.paymentDate}</span>
                 </div>
-                <div className="paymentEditBottom">
+                {/* <div className="paymentEditBottom">
                     <EditSharp />
                     <button className="paymentEditButton">Edit</button>
-                </div>
+                </div> */}
             </div>
         );
     }
