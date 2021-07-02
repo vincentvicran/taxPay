@@ -9,6 +9,8 @@ import AddVehicle from './components/vehicles/pages/AddVehicle';
 import Vehicles from './components/vehicles/pages/Vehicles';
 import Insurances from './components/insurances/pages/Insurances';
 import AddInsurance from './components/insurances/pages/AddInsurance';
+import Payments from './components/payments/pages/Payments';
+import AddPayment from './components/payments/pages/AddPayment';
 
 export default function App() {
     return (
@@ -34,9 +36,13 @@ export default function App() {
                     <Route path="/addinsurance">
                         <AddInsurance />
                     </Route>
-                    {/* <Route path="/userlist">
-                        <UserList />
-                    </Route> */}
+                    <Route path="/payments">
+                        <Payments />
+                    </Route>
+                    <Route path="/addpayment">
+                        <AddPayment />
+                    </Route>
+
                     <Redirect to="/" />
                 </Switch>
             </Router>

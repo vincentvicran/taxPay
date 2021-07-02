@@ -1,8 +1,8 @@
-.insurances {
+.payments {
     background-image: linear-gradient(to top right, rgb(213, 255, 174), rgb(211, 211, 211), rgb(166, 178, 248));
 }
 
-.insuranceBody {
+.paymentBody {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,44 +11,45 @@
     flex-wrap: wrap;
 }
 
-.insuranceTitle {
+.paymentTitle {
     display: flex;
     font-size: 30px;
     flex: 100%;
     padding: 0 20px 30px;
 }
 
-.insuranceContainer {
+.paymentContainer {
     display: flex;
     flex: 3;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    padding-bottom: 20%;
+    padding-bottom: 12%;
 }
 
-.insuranceShow,
-.insuranceAddNew {
+.paymentShow,
+.paymentAddNew {
     display: flex;
     align-items: flex-start;
     justify-content: space-around;
     flex-wrap: wrap;
     flex-direction: column;
     width: 300px;
+    height: 80%;
     margin: 10px;
     padding: 50px;
     -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
 }
 
-.insuranceShowTitle {
+.paymentShowTitle {
     font-size: 14px;
     font-weight: 600;
     color: indigo;
     padding: 0px;
 }
 
-.insuranceShowInfo {
+.paymentShowInfo {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -56,45 +57,45 @@
     color: #444;
 }
 
-.insuranceShowIcon {
+.paymentShowIcon {
     font-size: 16px !important;
 }
 
-.insuranceShowInfoTitle {
+.paymentShowInfoTitle {
     margin-left: 10px;
 }
 
-.insuranceAddNew {
-    padding: 190px 0;
+.paymentAddNew {
+    padding: 215px 0;
     align-items: center;
 }
 
-.insuranceAdd {
-    padding: 0px 30px;
+.paymentAdd {
+    padding: 0 30px;
+
     -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
 }
 
-.insuranceAddForm {
+.paymentAddForm {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    flex-direction: column;
-    padding: 20px;
+    padding: 25px;
 }
 
-.insuranceAddItem {
+.paymentAddItem {
     display: flex;
     flex-direction: column;
-    margin: 15px;
+    margin: 25px;
 }
 
-.insuranceAddItem > label {
+.paymentAddItem > label {
     margin-top: 8px;
     font-size: 14px;
 }
 
-.insuranceAddInput {
+.paymentAddInput {
     font-size: 12px;
     font-weight: 400;
     background: transparent;
@@ -106,16 +107,16 @@
     border-bottom: 1px solid gray;
 }
 
-.insuranceAddBottom {
+.paymentAddBottom {
     display: flex;
     flex: 100%;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    padding: 15px 0;
+    padding: 10% 0;
 }
 
-.insuranceAddButton {
+.paymentAddButton {
     border-radius: 7px 0 7px 7px;
     border: none;
     padding: 10px;
@@ -124,19 +125,42 @@
     font-weight: 600;
 }
 
-.insuranceEditBottom {
+.paymentEditBottom {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
     cursor: pointer;
-    padding: 10% 0 0;
 }
 
-.insuranceEditButton {
+.paymentEditButton {
     border-radius: 7px 0 7px 7px;
     border: none;
     background-color: indigo;
     color: white;
     font-weight: 600;
+}
+
+.paymentShowImg {
+    width: 100px;
+    height: 90px;
+    border-radius: 14px 0 14px 14px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.paymentUploadImg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 10%;
+}
+
+.paymentUploadImg .paymentShowTitle {
+    padding: 20px;
+}
+
+.paymentUploadIcon {
+    cursor: pointer;
 }

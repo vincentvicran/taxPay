@@ -9,7 +9,7 @@ export function Insurances() {
     return (
         <div className="insurances">
             <div className="insuranceBody">
-                <div className="insuranceTitle">insurances</div>
+                <div className="insuranceTitle">Insurances</div>
                 <div className="insuranceContainer">
                     <InsuranceList />
                     <Link to="/addinsurance" className="insuranceAddNew">

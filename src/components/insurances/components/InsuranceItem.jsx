@@ -1,11 +1,28 @@
 import React from 'react';
-import { EventAvailableOutlined, EventBusyOutlined, EditSharp, Receipt } from '@material-ui/icons';
+import {
+    Ballot,
+    EventAvailableOutlined,
+    EventBusyOutlined,
+    EditSharp,
+    PermIdentity,
+    Receipt,
+} from '@material-ui/icons';
 import '.././shared/styles/insurances.css';
 
 function InsuranceItem({ insurance }) {
     if (insurance.length !== 0) {
         return (
             <div className="insuranceShow">
+                <span className="insuranceShowTitle">Payor</span>
+                <div className="insuranceShowInfo">
+                    <PermIdentity className="insuranceShowIcon" />
+                    <span className="insuranceShowInfoTitle">{insurance.payor}</span>
+                </div>
+                <span className="insuranceShowTitle">Vehicle Number</span>
+                <div className="insuranceShowInfo">
+                    <Ballot className="insuranceShowIcon" />
+                    <span className="insuranceShowInfoTitle">{insurance.vehicle}</span>
+                </div>
                 <span className="insuranceShowTitle">Insurance Type</span>
                 <div className="insuranceShowInfo">
                     <Receipt className="insuranceShowIcon" />
