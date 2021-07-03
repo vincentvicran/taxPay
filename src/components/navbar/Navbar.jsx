@@ -3,7 +3,7 @@ import './navbar.css';
 import logo from '../../assets/images/tax_logo.png';
 import { NavLink } from 'react-router-dom';
 
-export default function Navbar({ isLoggedIn }) {
+export default function Navbar({ isAuthenticated }) {
     return (
         <div className="navbar">
             <NavLink to="/" className="title">
@@ -11,7 +11,7 @@ export default function Navbar({ isLoggedIn }) {
                 <span className="titleName">taxPay</span>
             </NavLink>
             <nav className="navbarMenu">
-                {!isLoggedIn && (
+                {!isAuthenticated && (
                     <ul>
                         <NavLink to="/login" className="navbarItems">
                             <button className="loginButton">Log In</button>
@@ -21,7 +21,7 @@ export default function Navbar({ isLoggedIn }) {
                         </NavLink>
                     </ul>
                 )}
-                {isLoggedIn && (
+                {isAuthenticated && (
                     <ul>
                         <NavLink to="/" className="navbarItems">
                             <li>Home</li>

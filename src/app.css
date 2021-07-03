@@ -16,11 +16,18 @@ select:focus {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20% 0 30%;
+}
+
+.loaderBody {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 40px;
     height: 40px;
 }
 
-.loader:after {
+.loaderBody:after {
     content: ' ';
     display: flex;
     width: 25px;

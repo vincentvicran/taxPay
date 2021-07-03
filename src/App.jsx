@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import Home from './pages/home/Home';
@@ -14,14 +14,18 @@ import AddPayment from './components/payments/pages/AddPayment';
 import Auth from './components/auth/pages/Auth';
 import Vehicle from './components/vehicles/pages/Vehicle';
 
+import { loadUser } from './actions/userActions';
+import store from './store';
+
 export default function App() {
+    useEffect(() => {
+        store.dispatch(loadUser());
+    });
     return (
         <Router>
             <Navbar />
             <Switch>
-                <Route exact path="/">
-                    <Home />
-                </Route>
+                <Route exact path="/" component={Home} />
                 <Route path="/profile">
                     <Profile />
                 </Route>
@@ -49,9 +53,7 @@ export default function App() {
                 {/* <Route path="/login">
                     <Modal login />
                 </Route> */}
-                <Route path="/login">
-                    <Auth login />
-                </Route>
+                <Route path="/login" children={<Auth login />} />
                 <Route path="/register">
                     <Auth register />
                 </Route>
