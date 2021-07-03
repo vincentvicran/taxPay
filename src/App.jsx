@@ -12,6 +12,7 @@ import AddInsurance from './components/insurances/pages/AddInsurance';
 import Payments from './components/payments/pages/Payments';
 import AddPayment from './components/payments/pages/AddPayment';
 import Auth from './components/auth/pages/Auth';
+import Vehicle from './components/vehicles/pages/Vehicle';
 
 export default function App() {
     return (
@@ -26,6 +27,9 @@ export default function App() {
                 </Route>
                 <Route path="/vehicles">
                     <Vehicles />
+                </Route>
+                <Route path="/vehicles/:id">
+                    <Vehicle />
                 </Route>
                 <Route path="/addvehicle">
                     <AddVehicle />

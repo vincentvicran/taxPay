@@ -1,32 +1,64 @@
-import React from 'react';
+import React, { Fragment, useEffect } from 'react';
+
+import { useDispatch, useSelector } from 'react-redux';
+import { getVehicles } from '../../../actions/vehicleActions';
+import { useAlert } from 'react-alert';
+
 import VehicleItem from '../components/VehicleItem';
 import '.././shared/styles/vehicles.css';
 
-const vehicles = [
-    {
-        __id: '1',
-        ownerName: 'Vikrant Shrestha',
-        vehicleRegistrationDate: '2020-01-22',
-        vehicleType: 'TwoWheeler',
-        vehicleNumber: 'Ba.99Pa.11',
-        engineCapacity: '150cc',
-        latestPaymentDate: '2015-02-22',
-    },
-    {
-        __id: '2',
-        ownerName: 'Vincent Vicran',
-        vehicleRegistrationDate: '2010-11-27',
-        vehicleType: 'FourWheeler',
-        vehicleNumber: 'Ba.67Pa.1291',
-        engineCapacity: '1800cc',
-        latestPaymentDate: '2017-02-22',
-    },
-];
+import Loader from '../../.././Loader';
 
-function VehicleList() {
-    return vehicles.map((vehicle) => {
-        return <VehicleItem vehicle={vehicle} />;
-    });
-}
+const VehicleList = () => {
+    let vehicles = [];
+    const alert = useAlert();
+    const dispatch = useDispatch();
+
+    const { loading, error } = useSelector((state) => state.vehicles);
+
+    useEffect(() => {
+        if (error) {
+            alert.success('Success!');
+            return alert.error(error);
+        }
+
+        dispatch(getVehicles());
+    }, [dispatch, alert, error]);
+
+    return (
+        <Fragment>
+            {loading ? (
+                <h1>
+                    <Loader />
+                </h1>
+            ) : (
+                vehicles.map((vehicle) => {
+                    return <VehicleItem key={vehicle._id} vehicle={vehicle} />;
+                })
+            )}
+        </Fragment>
+    );
+};
 
 export default VehicleList;
+
+// const vehicles = [
+//     {
+//         __id: '1',
+//         ownerName: 'Vikrant Shrestha',
+//         vehicleRegistrationDate: '2020-01-22',
+//         vehicleType: 'TwoWheeler',
+//         vehicleNumber: 'Ba.99Pa.11',
+//         engineCapacity: '150cc',
+//         latestPaymentDate: '2015-02-22',
+//     },
+//     {
+//         __id: '2',
+//         ownerName: 'Vincent Vicran',
+//         vehicleRegistrationDate: '2010-11-27',
+//         vehicleType: 'FourWheeler',
+//         vehicleNumber: 'Ba.67Pa.1291',
+//         engineCapacity: '1800cc',
+//         latestPaymentDate: '2017-02-22',
+//     },
+// ];

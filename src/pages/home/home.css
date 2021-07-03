@@ -44,6 +44,7 @@
 
 .homeGreeting,
 .homeFunctions,
+.outFunctions,
 .homeTitle,
 .homeTaxrates {
     display: flex;
@@ -90,11 +91,11 @@
 
 .homeFunctionItems {
     color: black;
+    padding: 10px;
 }
 
 .homeFunctionItems:hover {
     color: rgb(99, 0, 197);
-    padding: 10px;
     border: 1px solid rgb(99, 0, 197);
     border-radius: 7px 0 7px 7px;
     transition: all 0.5s ease 0s;
@@ -112,4 +113,23 @@
     border: 1px solid indigo;
     border-radius: 7px 0 7px 7px;
     animation: forTitle 2s ease 0s infinite alternate;
+}
+
+.outFunctions {
+    height: 30vh;
+    list-style: decimal;
+    justify-content: space-evenly;
+}
+
+.outFunctionItems {
+    color: black;
+    padding: 10px;
+}
+
+.outFunctionItems:hover {
+    color: rgb(99, 0, 197);
+    /* border: 1px solid rgb(99, 0, 197);
+    border-radius: 7px 0 7px 7px;
+    transition: all 0.5s ease 0s;
+    animation: forTitle 2s ease 0s infinite alternate; */
 }

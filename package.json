@@ -11,12 +11,16 @@
         "@testing-library/user-event": "^12.1.10",
         "axios": "^0.21.1",
         "react": "^17.0.2",
+        "react-alert": "^7.0.3",
+        "react-alert-template-basic": "^1.0.2",
         "react-bootstrap": "^1.6.1",
         "react-dom": "^17.0.2",
         "react-redux": "^7.2.4",
         "react-router-dom": "^5.2.0",
         "react-scripts": "3.4.4",
         "redux": "^4.1.0",
+        "redux-devtools": "^3.7.0",
+        "redux-devtools-extension": "^2.13.9",
         "redux-thunk": "^2.3.0",
         "validator": "^13.6.0",
         "web-vitals": "^1.0.1"
@@ -45,5 +49,5 @@
             "last 1 safari version"
         ]
     },
-    "proxy": "https://tax-pay.herokuapp.com/"
+    "proxy": "http://localhost:3300"
 }
