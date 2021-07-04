@@ -3,13 +3,14 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import { vehicleReducer, vehicleDetailsReducer } from './reducers/vehicleReducers';
-import { authReducer, userReducer } from './reducers/userReducers';
+import { authReducer, forgotPasswordReducer, userReducer } from './reducers/userReducers';
 
 const reducer = combineReducers({
     vehicles: vehicleReducer,
     vehicleDetails: vehicleDetailsReducer,
     auth: authReducer,
     user: userReducer,
+    forgotPassword: forgotPasswordReducer,
 });
 
 let initialState = {};
