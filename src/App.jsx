@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+
 import Navbar from './components/navbar/Navbar';
 import Home from './pages/home/Home';
 import './app.css';
@@ -17,53 +18,30 @@ import Vehicle from './components/vehicles/pages/Vehicle';
 import { loadUser } from './actions/userActions';
 import store from './store';
 
+import ProtectedRoute from './routes/ProtectedRoute';
+
 export default function App() {
     useEffect(() => {
         store.dispatch(loadUser());
     });
     return (
         <Router>
+            {/* {user ? <Navbar isAuthenticated /> : !loading && <Navbar />} */}
             <Navbar />
             <Switch>
                 <Route exact path="/" component={Home} />
-                <Route path="/profile">
-                    <Profile />
-                </Route>
-                <Route path="/vehicles">
-                    <Vehicles />
-                </Route>
-                <Route path="/vehicles/:id">
-                    <Vehicle />
-                </Route>
-                <Route path="/addvehicle">
-                    <AddVehicle />
-                </Route>
-                <Route path="/insurances">
-                    <Insurances />
-                </Route>
-                <Route path="/addinsurance">
-                    <AddInsurance />
-                </Route>
-                <Route path="/payments">
-                    <Payments />
-                </Route>
-                <Route path="/addpayment">
-                    <AddPayment />
-                </Route>
-                {/* <Route path="/login">
-                    <Modal login />
-                </Route> */}
+                <ProtectedRoute exact path="/profile" component={Profile} />
+                <ProtectedRoute exact path="/vehicles" component={Vehicles} />
+                <ProtectedRoute exact path="/vehicles/:id" component={Vehicle} />
+                <ProtectedRoute exact path="/addvehicle" component={AddVehicle} />
+                <ProtectedRoute exact path="/insurances" component={Insurances} />
+                <ProtectedRoute exact path="/addinsurance" component={AddInsurance} />
+                <ProtectedRoute exact path="/payments" component={Payments} />
+                <ProtectedRoute exact path="/addpayment" component={AddPayment} />
                 <Route path="/login" children={<Auth login />} />
-                <Route path="/register">
-                    <Auth register />
-                </Route>
-                <Route path="/forgotpassword">
-                    <Auth forgotpassword />
-                </Route>
-                <Route path="/resetpassword">
-                    <Auth resetpassword />
-                </Route>
-
+                <Route path="/register" children={<Auth register />} />
+                <Route path="/forgotpassword" children={<Auth forgotpassword />} />
+                <Route path="/resetpassword" children={<Auth resetpassword />} />
                 <Redirect to="/" />
             </Switch>
         </Router>

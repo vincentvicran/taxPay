@@ -2,7 +2,11 @@ import React from 'react';
 import { CalendarToday, LocationSearching, MailOutline, PermIdentity, PhoneAndroid } from '@material-ui/icons';
 import '../../shared/styles/users.css';
 
-export const UserItem = ({ user }) => {
+import { useSelector } from 'react-redux';
+
+export const UserItem = () => {
+    const { user } = useSelector((state) => state.auth);
+
     return (
         <div className="userShow">
             <div className="userShowTop">

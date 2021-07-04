@@ -3,7 +3,11 @@ import './navbar.css';
 import logo from '../../assets/images/tax_logo.png';
 import { NavLink } from 'react-router-dom';
 
-export default function Navbar({ isAuthenticated }) {
+import { useSelector } from 'react-redux';
+
+export default function Navbar() {
+    const { isAuthenticated } = useSelector((state) => state.auth);
+
     return (
         <div className="navbar">
             <NavLink to="/" className="title">
@@ -11,17 +15,7 @@ export default function Navbar({ isAuthenticated }) {
                 <span className="titleName">taxPay</span>
             </NavLink>
             <nav className="navbarMenu">
-                {!isAuthenticated && (
-                    <ul>
-                        <NavLink to="/login" className="navbarItems">
-                            <button className="loginButton">Log In</button>
-                        </NavLink>
-                        <NavLink to="/register" className="navbarItems">
-                            <button className="registerButton">Register</button>
-                        </NavLink>
-                    </ul>
-                )}
-                {isAuthenticated && (
+                {isAuthenticated ? (
                     <ul>
                         <NavLink to="/" className="navbarItems">
                             <li>Home</li>
@@ -37,6 +31,15 @@ export default function Navbar({ isAuthenticated }) {
                         </NavLink>
                         <NavLink to="/profile" className="navbarItems">
                             <button className="profileButton">Profile</button>
+                        </NavLink>
+                    </ul>
+                ) : (
+                    <ul>
+                        <NavLink to="/login" className="navbarItems">
+                            <button className="loginButton">Log In</button>
+                        </NavLink>
+                        <NavLink to="/register" className="navbarItems">
+                            <button className="registerButton">Register</button>
                         </NavLink>
                     </ul>
                 )}

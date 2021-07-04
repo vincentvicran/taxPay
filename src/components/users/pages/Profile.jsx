@@ -1,31 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { ExitToAppTwoTone } from '@material-ui/icons';
 import '../shared/styles/users.css';
 import { Link } from 'react-router-dom';
 import { UserItem } from '../components/userItem/UserItem';
-import axios from 'axios';
 
 function Profile() {
-    useEffect(() => {
-        axios
-            .get('https://tax-pay.herokuapp.com/api/v1/users/me')
-            .then((res) => {
-                console.log(res, res.message);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    }, []);
-
-    const user = {
-        id: '1',
-        userName: 'vincy07',
-        role: 'user',
-        userEmail: 'vvicran@gmail.com',
-        userDOB: '10.10.1998',
-        userContact: '9813996688',
-        userAddress: 'USA',
-    };
     return (
         <div className="user">
             <div className="userBody">
@@ -39,7 +18,7 @@ function Profile() {
                     </Link>
                 </div>
                 <div className="userContainer">
-                    <UserItem user={user} />
+                    <UserItem />
                     <div className="userUpdate">
                         <div className="userUpdateTitle">Details</div>
 

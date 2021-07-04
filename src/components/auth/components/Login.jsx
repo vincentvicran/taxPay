@@ -9,8 +9,8 @@ import { login, clearErrors } from '../../../actions/userActions';
 import { useEffect } from 'react';
 
 const Login = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [userEmail, setEmail] = useState('');
+    const [userPassword, setPassword] = useState('');
 
     const history = useHistory();
     const alert = useAlert();
@@ -21,6 +21,7 @@ const Login = () => {
     useEffect(() => {
         if (isAuthenticated) {
             history.push('/');
+            alert.success('User logged in!');
         }
 
         if (error) {
@@ -31,7 +32,7 @@ const Login = () => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        dispatch(login(email, password));
+        dispatch(login(userEmail, userPassword));
     };
 
     return (
@@ -50,7 +51,7 @@ const Login = () => {
                                         type="email"
                                         placeholder="Email"
                                         className="loginInput"
-                                        value={email}
+                                        value={userEmail}
                                         onChange={(e) => setEmail(e.target.value)}
                                     />
                                 </div>
@@ -60,7 +61,7 @@ const Login = () => {
                                         type="password"
                                         placeholder="Password"
                                         className="loginInput"
-                                        value={password}
+                                        value={userPassword}
                                         onChange={(e) => setPassword(e.target.value)}
                                     />
                                 </div>

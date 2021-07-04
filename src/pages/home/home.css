@@ -91,14 +91,17 @@
 
 .homeFunctionItems {
     color: black;
-    padding: 10px;
+    margin: 10px;
 }
 
 .homeFunctionItems:hover {
+    transition: all 0.3s ease 0s;
+    padding: 10px;
+
     color: rgb(99, 0, 197);
+
     border: 1px solid rgb(99, 0, 197);
     border-radius: 7px 0 7px 7px;
-    transition: all 0.5s ease 0s;
     animation: forTitle 2s ease 0s infinite alternate;
 }
 

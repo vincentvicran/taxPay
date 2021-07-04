@@ -30,7 +30,7 @@ export const login = (userEmail, userPassword) => async (dispatch) => {
 
         dispatch({
             type: LOGIN_SUCCESS,
-            payload: data.data.user,
+            payload: data.user,
         });
     } catch (error) {
         dispatch({
@@ -57,7 +57,7 @@ export const register = (userData) => async (dispatch) => {
 
         dispatch({
             type: REGISTER_USER_SUCCESS,
-            payload: data.data.user,
+            payload: data.user,
         });
     } catch (error) {
         dispatch({
@@ -68,7 +68,7 @@ export const register = (userData) => async (dispatch) => {
 };
 
 //* LOAD USER
-export const loadUser = (userData) => async (dispatch) => {
+export const loadUser = () => async (dispatch) => {
     try {
         dispatch({
             type: LOAD_USER_REQUEST,
@@ -78,7 +78,8 @@ export const loadUser = (userData) => async (dispatch) => {
 
         dispatch({
             type: LOAD_USER_SUCCESS,
-            payload: data.data,
+            // payload: data.data.user,
+            payload: data.user,
         });
     } catch (error) {
         dispatch({
