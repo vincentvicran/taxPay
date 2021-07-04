@@ -5,7 +5,7 @@ function ForgotPassword() {
     return (
         <div className="forgotPassword">
             <div className="forgotPasswordBody">
-                <div className="forgotPasswordTitle">Forgot you password?</div>
+                <div className="forgotPasswordTitle">Forgot your password?</div>
 
                 <form className="forgotPasswordForm">
                     <span className="forgotPasswordInfo">Please provide a verified email!</span>
