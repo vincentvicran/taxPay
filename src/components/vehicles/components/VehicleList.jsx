@@ -10,18 +10,17 @@ import '.././shared/styles/vehicles.css';
 import Loader from '../../.././Loader';
 
 const VehicleList = () => {
-    let vehicles = [];
     const alert = useAlert();
     const dispatch = useDispatch();
 
-    const { loading, error } = useSelector((state) => state.vehicles);
+    const { loading, error, vehicles } = useSelector((state) => state.vehicles);
 
     useEffect(() => {
         if (error) {
-            alert.success('Success!');
             return alert.error(error);
         }
 
+        alert.success('Success!');
         dispatch(getVehicles());
     }, [dispatch, alert, error]);
 

@@ -12,6 +12,8 @@ import {
 } from '@material-ui/icons';
 import '.././shared/styles/vehicles.css';
 
+import { Link } from 'react-router-dom';
+
 function VehicleItem({ vehicle, edit }) {
     if (vehicle.length !== 0) {
         return (
@@ -33,12 +35,12 @@ function VehicleItem({ vehicle, edit }) {
                             <Ballot className="vehicleShowIcon" />
                             <span className="vehicleShowInfoTitle">{vehicle.vehicleNumber}</span>
                         </div>
-                        <div className="vehicleBottom">
+                        <Link to={`/vehicles/${vehicle._id}`} className="vehicleBottom">
                             <div className="vehicleDelete">
                                 <Delete className="vehicleShowIcon" />
-                                <button className="vehicleDeleteButton">Delete</button>
+                                <button className="vehicleDeleteButton">View</button>
                             </div>
-                        </div>
+                        </Link>
                     </Fragment>
                 )}
                 {edit && (

@@ -2,28 +2,37 @@ import {
     ALL_VEHICLES_REQUEST,
     ALL_VEHICLES_SUCCESS,
     ALL_VEHICLES_FAIL,
-    VEHICLE_DETAILS_REQUEST,
-    VEHICLE_DETAILS_SUCCESS,
-    VEHICLE_DETAILS_FAIL,
+    LOAD_VEHICLE_REQUEST,
+    LOAD_VEHICLE_SUCCESS,
+    LOAD_VEHICLE_FAIL,
+    UPDATE_VEHICLE_REQUEST,
+    UPDATE_VEHICLE_SUCCESS,
+    UPDATE_VEHICLE_RESET,
+    UPDATE_VEHICLE_FAIL,
+    DELETE_VEHICLE_REQUEST,
+    DELETE_VEHICLE_SUCCESS,
+    DELETE_VEHICLE_FAIL,
     CLEAR_ERRORS,
 } from '../constants/vehicleConstants';
 
-export const vehicleReducer = (state = { vehicles: [] }, action) => {
+export const vehiclesReducer = (state = { vehicles: [] }, action) => {
     switch (action.type) {
         case ALL_VEHICLES_REQUEST:
             return {
+                ...state,
                 loading: true,
-                vehicles: [],
             };
 
         case ALL_VEHICLES_SUCCESS:
             return {
+                ...state,
                 loading: false,
-                vehicles: action.payload.data,
+                vehicles: action.payload,
             };
 
         case ALL_VEHICLES_FAIL:
             return {
+                ...state,
                 loading: false,
                 error: action.payload,
             };
@@ -39,23 +48,25 @@ export const vehicleReducer = (state = { vehicles: [] }, action) => {
     }
 };
 
-export const vehicleDetailsReducer = (state = { vehicle: [] }, action) => {
+export const vehicleDetailReducer = (state = { vehicle: [] }, action) => {
     switch (action.type) {
-        case VEHICLE_DETAILS_REQUEST:
+        case LOAD_VEHICLE_REQUEST:
             return {
                 ...state,
                 loading: true,
             };
 
-        case VEHICLE_DETAILS_SUCCESS:
+        case LOAD_VEHICLE_SUCCESS:
             return {
                 loading: false,
                 vehicle: action.payload,
             };
 
-        case VEHICLE_DETAILS_FAIL:
+        case LOAD_VEHICLE_FAIL:
             return {
+                ...state,
                 loading: false,
+                vehicle: null,
                 error: action.payload,
             };
 
@@ -69,3 +80,48 @@ export const vehicleDetailsReducer = (state = { vehicle: [] }, action) => {
             return state;
     }
 };
+
+// export const userReducer = (state = {}, action) => {
+//     switch (action.type) {
+//         case UPDATE_PROFILE_REQUEST:
+//         case UPDATE_PASSWORD_REQUEST:
+//             return {
+//                 ...state,
+//                 loading: true,
+//             };
+
+//         case UPDATE_PASSWORD_SUCCESS:
+//             if (action.payload === 'success') {
+//                 return {
+//                     ...state,
+//                     loading: false,
+//                     isUpdated: true,
+//                 };
+//             }
+//             break;
+
+//         case UPDATE_PROFILE_SUCCESS:
+//             return {
+//                 ...state,
+//                 loading: false,
+//                 isUpdated: action.payload,
+//             };
+
+//         case UPDATE_PASSWORD_RESET:
+//         case UPDATE_PROFILE_RESET:
+//             return {
+//                 ...state,
+//                 isUpdated: false,
+//             };
+
+//         case UPDATE_PASSWORD_FAIL:
+//         case UPDATE_PROFILE_FAIL:
+//             return {
+//                 ...state,
+//                 loading: false,
+//                 error: action.payload,
+//             };
+//         default:
+//             return state;
+//     }
+// };

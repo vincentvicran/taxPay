@@ -8,6 +8,7 @@ import './app.css';
 import Profile from './components/users/pages/Profile';
 import AddVehicle from './components/vehicles/pages/AddVehicle';
 import Vehicles from './components/vehicles/pages/Vehicles';
+import VehicleDetails from './components/vehicles/pages/VehicleDetails';
 import Insurances from './components/insurances/pages/Insurances';
 import AddInsurance from './components/insurances/pages/AddInsurance';
 import Payments from './components/payments/pages/Payments';
@@ -32,7 +33,8 @@ export default function App() {
                 <Route exact path="/" component={Home} />
                 <ProtectedRoute exact path="/profile" component={Profile} />
                 <ProtectedRoute exact path="/vehicles" component={Vehicles} />
-                <ProtectedRoute exact path="/vehicles/:id" component={Vehicle} />
+                <ProtectedRoute exact path="/vehicle/:id" component={Vehicle} />
+                <ProtectedRoute exact path="/vehicles/:id" component={VehicleDetails} />
                 <ProtectedRoute exact path="/addvehicle" component={AddVehicle} />
                 <ProtectedRoute exact path="/insurances" component={Insurances} />
                 <ProtectedRoute exact path="/addinsurance" component={AddInsurance} />

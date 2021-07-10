@@ -40,7 +40,7 @@ import VehicleItem from '../components/VehicleItem';
 //         dispatch(loadVehicle(match.params.id));
 //     }, [dispatch, alert, error, match.params.id]);
 
-export function Vehicle() {
+export function VehicleDetails() {
     const alert = useAlert();
     const dispatch = useDispatch();
     const { id } = useParams();
@@ -122,4 +122,4 @@ export function Vehicle() {
         </Fragment>
     );
 }
-export default Vehicle;
+export default VehicleDetails;

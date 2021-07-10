@@ -5,9 +5,9 @@ import {
     ALL_VEHICLES_REQUEST,
     ALL_VEHICLES_SUCCESS,
     ALL_VEHICLES_FAIL,
-    VEHICLE_DETAILS_REQUEST,
-    VEHICLE_DETAILS_SUCCESS,
-    VEHICLE_DETAILS_FAIL,
+    LOAD_VEHICLE_REQUEST,
+    LOAD_VEHICLE_SUCCESS,
+    LOAD_VEHICLE_FAIL,
     CLEAR_ERRORS,
 } from '../constants/vehicleConstants';
 
@@ -21,7 +21,7 @@ export const getVehicles = () => async (dispatch) => {
 
         dispatch({
             type: ALL_VEHICLES_SUCCESS,
-            payload: data.data,
+            payload: data.vehicles,
         });
     } catch (error) {
         dispatch({
@@ -31,21 +31,23 @@ export const getVehicles = () => async (dispatch) => {
     }
 };
 
-export const getVehicleDetails = (id) => async (dispatch) => {
+export const loadVehicle = (id) => async (dispatch) => {
     try {
         dispatch({
-            type: VEHICLE_DETAILS_REQUEST,
+            type: LOAD_VEHICLE_REQUEST,
         });
+
+        console.log(id);
 
         const { data } = await axios.get(`api/v1/vehicles/${id}`);
 
         dispatch({
-            type: VEHICLE_DETAILS_SUCCESS,
-            payload: data.data,
+            type: LOAD_VEHICLE_SUCCESS,
+            payload: data.vehicle,
         });
     } catch (error) {
         dispatch({
-            type: VEHICLE_DETAILS_FAIL,
+            type: LOAD_VEHICLE_FAIL,
             payload: error.response.data.message,
         });
     }

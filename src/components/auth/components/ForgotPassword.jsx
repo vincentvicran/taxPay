@@ -37,37 +37,45 @@ function ForgotPassword() {
     };
 
     return (
-        <div className="forgotPassword">
-            <div className="forgotPasswordBody">
-                <div className="forgotPasswordTitle">Forgot your password?</div>
+        <Fragment>
+            {loading ? (
+                <Loader />
+            ) : (
+                <Fragment>
+                    <div className="forgotPassword">
+                        <div className="forgotPasswordBody">
+                            <div className="forgotPasswordTitle">Forgot your password?</div>
 
-                <form className="forgotPasswordForm" onSubmit={submitHandler}>
-                    <span className="forgotPasswordInfo">Please provide a verified email!</span>
-                    <div className="forgotPasswordItem">
-                        <label className="showTitle">Email</label>
-                        <input
-                            type="email"
-                            value={userEmail}
-                            onChange={(e) => {
-                                setEmail(e.target.value);
-                            }}
-                            className="forgotPasswordInput"
-                        />
+                            <form className="forgotPasswordForm" onSubmit={submitHandler}>
+                                <span className="forgotPasswordInfo">Please provide a verified email!</span>
+                                <div className="forgotPasswordItem">
+                                    <label className="showTitle">Email</label>
+                                    <input
+                                        type="email"
+                                        value={userEmail}
+                                        onChange={(e) => {
+                                            setEmail(e.target.value);
+                                        }}
+                                        className="forgotPasswordInput"
+                                    />
+                                </div>
+                                <button className="forgotPasswordBodyButton" disabled={loading ? true : false}>
+                                    Next
+                                </button>
+                            </form>
+                            <div className="forgotPasswordFooter">
+                                <div className="forgotPasswordFooterLeft">
+                                    <Link to="/login">Have an existing account?</Link>
+                                </div>
+                                <div className="forgotPasswordFooterLeft">
+                                    <Link to="/register">Want a new account?</Link>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <button className="forgotPasswordBodyButton" disabled={loading ? true : false}>
-                        Next
-                    </button>
-                </form>
-                <div className="forgotPasswordFooter">
-                    <div className="forgotPasswordFooterLeft">
-                        <Link to="/login">Have an existing account?</Link>
-                    </div>
-                    <div className="forgotPasswordFooterLeft">
-                        <Link to="/register">Want a new account?</Link>
-                    </div>
-                </div>
-            </div>
-        </div>
+                </Fragment>
+            )}
+        </Fragment>
     );
 }
 
