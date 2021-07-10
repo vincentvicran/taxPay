@@ -31,7 +31,7 @@ export default function App() {
             <Switch>
                 <Route exact path="/" component={Home} />
                 <ProtectedRoute exact path="/profile" component={Profile} />
-                <ProtectedRoute exact path="/vehicles" component={Vehicles} />
+                <Route exact path="/vehicles" component={Vehicles} />
                 <ProtectedRoute exact path="/vehicles/:id" component={Vehicle} />
                 <ProtectedRoute exact path="/addvehicle" component={AddVehicle} />
                 <ProtectedRoute exact path="/insurances" component={Insurances} />

@@ -8,26 +8,35 @@ import VehicleItem from '../components/VehicleItem';
 import '.././shared/styles/vehicles.css';
 
 import Loader from '../../.././Loader';
-
+import {getDatas} from '../action'
+import {get} from "lodash"
 const VehicleList = () => {
     let vehicles = [];
     const alert = useAlert();
     const dispatch = useDispatch();
 
-    const { loading, error } = useSelector((state) => state.vehicles);
+    // const { loading, error } = useSelector((state) => state.vehicles);
+const {readState,data} = useSelector(state=> state.VehicleReducer);
+    useEffect(async() => {
+        // if (error) {
+        //     alert.success('Success!');
+        //     return alert.error(error);
+        // }
 
-    useEffect(() => {
-        if (error) {
-            alert.success('Success!');
-            return alert.error(error);
-        }
+   const res = await   dispatch(getDatas());
+   const status = get(res,"value.status");
+   if(status === 200){
+    console.log("my response",res);
+   }else{
 
-        dispatch(getVehicles());
-    }, [dispatch, alert, error]);
+   }
+  
 
+    }, [dispatch]);
+    console.log("read",readState,data);
     return (
         <Fragment>
-            {loading ? (
+            {/* {loading ? (
                 <h1>
                     <Loader />
                 </h1>
@@ -35,7 +44,8 @@ const VehicleList = () => {
                 vehicles.map((vehicle) => {
                     return <VehicleItem key={vehicle._id} vehicle={vehicle} />;
                 })
-            )}
+            )} */}
+            <h1>Hello</h1>
         </Fragment>
     );
 };
