@@ -16,7 +16,7 @@ select:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20% 0 30%;
+    padding: 90px 0 600px;
 }
 
 .loaderBody {

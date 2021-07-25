@@ -27,9 +27,9 @@ const VehicleList = () => {
     return (
         <Fragment>
             {loading ? (
-                <h1>
+                <div style={{ padding: '90px 50% 400px' }}>
                     <Loader />
-                </h1>
+                </div>
             ) : (
                 vehicles.map((vehicle) => {
                     return <VehicleItem key={vehicle._id} vehicle={vehicle} />;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './navbar.css';
 import logo from '../../assets/images/tax_logo.png';
 import { NavLink } from 'react-router-dom';
@@ -8,15 +8,17 @@ import { useSelector } from 'react-redux';
 export default function Navbar() {
     const { isAuthenticated } = useSelector((state) => state.auth);
 
+    const [showNav, setShowNav] = useState(false);
+
     return (
         <div className="navbar">
             <NavLink to="/" className="title">
                 <img className="logo" src={logo} alt="Tax Logo" />
                 <span className="titleName">taxPay</span>
             </NavLink>
-            <nav className="navbarMenu">
+            <nav className="navbarMenu" onClick={() => setShowNav(!showNav)}>
                 {isAuthenticated ? (
-                    <ul>
+                    <ul id={showNav ? 'showNav' : 'hideNav'}>
                         <NavLink to="/" className="navbarItems">
                             <li>Home</li>
                         </NavLink>
@@ -34,7 +36,7 @@ export default function Navbar() {
                         </NavLink>
                     </ul>
                 ) : (
-                    <ul>
+                    <ul id={showNav ? 'showNav' : 'hideNav'}>
                         <NavLink to="/login" className="navbarItems">
                             <button className="loginButton">Log In</button>
                         </NavLink>
@@ -43,6 +45,11 @@ export default function Navbar() {
                         </NavLink>
                     </ul>
                 )}
+                <div className="burger" id={showNav ? 'burgerToggle' : ''}>
+                    <div className="line1"></div>
+                    <div className="line2"></div>
+                    <div className="line3"></div>
+                </div>
             </nav>
         </div>
     );

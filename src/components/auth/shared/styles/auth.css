@@ -39,9 +39,9 @@ select:focus {
     animation: forInput 2s ease 0s infinite alternate;
 }
 
-.auth {
+/* .auth {
     background-image: linear-gradient(to top right, rgb(213, 255, 174), rgb(211, 211, 211), rgb(166, 178, 248));
-}
+} */
 
 .authBody {
     display: flex;
@@ -177,4 +177,11 @@ select:focus {
 .registerFooterLeft,
 .registerFooterRight {
     padding: 0 10px;
+}
+
+#loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20% 0 70vh;
 }
