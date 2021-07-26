@@ -1,5 +1,5 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
+import middleware from './middlewares/middleware';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import { authReducer, forgotPasswordReducer, userReducer } from './reducers/userReducers';
@@ -16,8 +16,6 @@ const reducer = combineReducers({
 });
 
 let initialState = {};
-
-const middleware = [thunk];
 
 const store = createStore(reducer, initialState, composeWithDevTools(applyMiddleware(...middleware)));
 
