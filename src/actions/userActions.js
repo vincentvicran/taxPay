@@ -1,4 +1,5 @@
 import axios from 'axios';
+import * as source from '../sources/userSource';
 
 import {
     LOGIN_FAIL,
@@ -36,13 +37,7 @@ export const login = (userEmail, userPassword) => async (dispatch) => {
             type: LOGIN_REQUEST,
         });
 
-        const config = {
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        };
-
-        const { data } = await axios.post(`api/v1/users/login`, { userEmail, userPassword }, config);
+        const { data } = await source.postLogin(userEmail, userPassword);
 
         dispatch({
             type: LOGIN_SUCCESS,
@@ -63,13 +58,7 @@ export const register = (userData) => async (dispatch) => {
             type: REGISTER_USER_REQUEST,
         });
 
-        const config = {
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        };
-
-        const { data } = await axios.post(`api/v1/users/register`, userData, config);
+        const { data } = await source.postRegister(userData);
 
         dispatch({
             type: REGISTER_USER_SUCCESS,
@@ -90,7 +79,7 @@ export const loadUser = () => async (dispatch) => {
             type: LOAD_USER_REQUEST,
         });
 
-        const { data } = await axios.get(`api/v1/users/me`);
+        const { data } = await source.getUser();
 
         dispatch({
             type: LOAD_USER_SUCCESS,
@@ -112,13 +101,7 @@ export const updateProfile = (userData) => async (dispatch) => {
             type: UPDATE_PROFILE_REQUEST,
         });
 
-        const config = {
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        };
-
-        const { data } = await axios.patch(`api/v1/users/updateme`, userData, config);
+        const { data } = await source.patchUser(userData);
 
         dispatch({
             type: UPDATE_PROFILE_SUCCESS,
@@ -143,13 +126,7 @@ export const updatePassword = (passwords) => async (dispatch) => {
             type: UPDATE_PASSWORD_REQUEST,
         });
 
-        const config = {
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        };
-
-        const { data } = await axios.patch(`api/v1/users/updatepassword`, passwords, config);
+        const { data } = await source.patchPassword(passwords);
 
         dispatch({
             type: UPDATE_PASSWORD_SUCCESS,
@@ -170,7 +147,7 @@ export const updatePassword = (passwords) => async (dispatch) => {
 //* LOGOUT USER
 export const logout = () => async (dispatch) => {
     try {
-        await axios.get(`api/v1/users/logout`);
+        await source.getUserOut();
 
         dispatch({
             type: LOGOUT_SUCCESS,
@@ -190,13 +167,7 @@ export const forgotPassword = (userEmail) => async (dispatch) => {
             type: FORGOT_PASSWORD_REQUEST,
         });
 
-        const config = {
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        };
-
-        const { data } = await axios.post(`api/v1/users/forgotpassword`, { userEmail }, config);
+        const { data } = await source.postForgotPassword(userEmail);
 
         dispatch({
             type: FORGOT_PASSWORD_SUCCESS,
@@ -217,13 +188,7 @@ export const resetPassword = (token, passwords) => async (dispatch) => {
             type: RESET_PASSWORD_REQUEST,
         });
 
-        const config = {
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        };
-
-        const { data } = await axios.patch(`api/v1/users/resetpassword/${token}`, passwords, config);
+        const { data } = await source.postResetPassword(token, passwords);
 
         dispatch({
             type: RESET_PASSWORD_SUCCESS,

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const url = {
-    base: 'http://localhost:3300/api/v1',
+    base: 'http://localhost:3300/api/v1/',
 };
 
 const headers = {
