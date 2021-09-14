@@ -1,0 +1,187 @@
+@keyframes forInput {
+    0% {
+        color: rgb(132, 58, 252);
+        border: 1px solid rgb(132, 58, 252);
+        box-shadow: 3px 3px 6px 1px rgb(132, 58, 252);
+        -webkit-box-shadow: 3px 3px 6px 1px rgb(132, 58, 252);
+        -moz-box-shadow: 3px 3px 6px 1px rgb(132, 58, 252);
+    }
+    25% {
+        color: rgb(118, 35, 201);
+        border: 1px solid rgb(118, 35, 201);
+        box-shadow: 3px 3px 6px 1px rgb(118, 35, 201);
+        -webkit-box-shadow: 3px 3px 6px 1px rgb(118, 35, 201);
+        -moz-box-shadow: 3px 3px 6px 1px rgb(118, 35, 201);
+    }
+    50% {
+        color: rgb(96, 25, 155);
+        border: 1px solid rgb(96, 25, 155);
+        box-shadow: 3px 3px 6px 1px rgb(96, 25, 155);
+        -webkit-box-shadow: 3px 3px 6px 1px rgb(96, 25, 155);
+        -moz-box-shadow: 3px 3px 6px 1px rgb(96, 25, 155);
+    }
+    100% {
+        border: 1px solid rgb(67, 11, 122);
+        color: rgb(67, 11, 122);
+        box-shadow: 3px 3px 6px 1px rgb(67, 11, 122);
+        -webkit-box-shadow: 3px 3px 6px 1px rgb(67, 11, 122);
+        -moz-box-shadow: 3px 3px 6px 1px rgb(67, 11, 122);
+    }
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+
+    border-radius: 7px 0 7px 7px;
+    transition: all 0.5s ease 0s;
+    animation: forInput 2s ease 0s infinite alternate;
+}
+
+/* .auth {
+    background-image: linear-gradient(to top right, rgb(213, 255, 174), rgb(211, 211, 211), rgb(166, 178, 248));
+} */
+
+.authBody {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10%;
+    padding: 50px 100px 200px;
+}
+
+.login,
+.register,
+.forgotPassword,
+.resetPassword,
+.registerBody {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.loginBody,
+.registerBody,
+.forgotPasswordBody,
+.resetPasswordBody {
+    padding: 35px 50px 10px;
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+
+.registerBody {
+    flex: 2;
+}
+
+.loginForm,
+.forgotPasswordForm,
+.resetPasswordForm {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px 50px;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.registerForm {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.loginTitle,
+.registerTitle,
+.forgotPasswordTitle,
+.resetPasswordTitle {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 30px;
+}
+
+.forgotPasswordTitle,
+.resetPasswordTitle {
+    padding: 20px;
+    font-size: 25px;
+}
+
+.registerLeft,
+.registerRight {
+    padding: 20px;
+}
+
+.loginItem,
+.registerItem,
+.forgotPasswordItem,
+.resetPasswordItem {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.showTitle {
+    font-size: 15px;
+    font-weight: 600;
+    color: indigo;
+    padding: 5px;
+}
+
+.loginItem > input,
+.registerItem > input,
+.forgotPasswordItem > input,
+.resetPasswordItem > input {
+    border: none;
+    padding: 10px;
+    border-bottom: 1px solid gray;
+    background: transparent;
+    font-size: 12px;
+}
+
+.registerBodyBottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex: 100%;
+}
+
+.loginBodyButton,
+.registerBodyButton,
+.forgotPasswordBodyButton,
+.resetPasswordBodyButton {
+    margin: 20px auto;
+    border-radius: 7px 7px 7px 0px;
+    border: none;
+    cursor: pointer;
+    background-color: indigo;
+    color: white;
+    font-weight: 600;
+}
+
+.loginFooter,
+.registerFooter,
+.forgotPasswordFooter,
+.resetPasswordFooter {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 100%;
+    padding: 10px 0px;
+    justify-content: space-evenly;
+}
+
+.registerFooterLeft,
+.registerFooterRight {
+    padding: 0 10px;
+}
+
+#loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20% 0 70vh;
+}

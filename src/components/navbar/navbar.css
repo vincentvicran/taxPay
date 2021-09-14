@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* font-family: 'Montserrat', sans-serif; */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    margin: 0;
+    padding: 20px 10%;
+    height: 50px;
+    background-color: rgb(56, 12, 87);
+    z-index: 999;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    color: #edf0f1;
+    padding: 0 0 10px 20px;
+    margin: 5px auto 0 0;
+}
+
+.titleName {
+    margin-left: 5px;
+    padding: 8px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.titleName:hover {
+    text-decoration: none;
+    color: transparent;
+    background-image: linear-gradient(to top right, rgb(213, 255, 174), rgb(211, 211, 211), rgb(166, 178, 248));
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.navbarMenu {
+    list-style: none;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-weight: 360;
+}
+
+.navbarMenu li {
+    display: inline-flex;
+    padding: 10px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li,
+.navbarItems,
+button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+}
+.navbarMenu li .navbarItems {
+    transition: all 0.3s ease 0s;
+}
+
+li:hover {
+    color: #99d1ff;
+}
+
+button {
+    height: 34px;
+    margin-left: 10px;
+    padding: 3px 12px;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+button:hover {
+    background-color: rgba(0, 136, 169, 0.7);
+}
+
+.registerButton,
+.profileButton {
+    margin-left: 10px;
+    border-radius: 7px 0 7px 7px;
+}
+
+.loginButton {
+    border-radius: 7px 7px 7px 0;
+}
+
+.burger {
+    display: none;
+}
+
+.burger div {
+    width: 21px;
+    height: 2px;
+    background-image: linear-gradient(to top right, rgb(213, 255, 174), rgb(211, 211, 211), rgb(166, 178, 248));
+    margin: 4px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+    .burger {
+        display: block;
+        cursor: pointer;
+    }
+
+    #hideNav {
+        display: none;
+    }
+
+    @keyframes navItemsFade {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+            /* transform: translate(0px, 0px); */
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0px);
+            /* transform: translate(30px, 0px); */
+        }
+    }
+
+    @keyframes navBarFade {
+        from {
+            opacity: 0;
+            transform: translateX(100vw);
+            /* transform: translate(0px, 0px); */
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0vw);
+            /* transform: translate(30px, 0px); */
+        }
+    }
+
+    #showNav {
+        display: inline-flex;
+        position: absolute;
+        right: 0px;
+        top: 7vh;
+        height: 93vh;
+        background-color: rgb(56, 12, 87);
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 0 50px;
+        opacity: 0;
+        animation: navBarFade 0.5s ease-in 0.1s forwards;
+    }
+
+    #showNav li,
+    #showNav button {
+        opacity: 0;
+        animation: navItemsFade 0.6s ease-in 0.4s forwards;
+    }
+
+    #burgerToggle .line1 {
+        transform: rotate(-45deg) translate(-5px, -1px);
+    }
+
+    #burgerToggle .line2 {
+        display: none;
+    }
+
+    #burgerToggle .line3 {
+        transform: rotate(45deg) translate(-5px, 1px);
+    }
+}
