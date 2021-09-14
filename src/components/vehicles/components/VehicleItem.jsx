@@ -30,15 +30,36 @@ function VehicleItem({ vehicle, edit }) {
                             <Commute className="vehicleShowIcon" />
                             <span className="vehicleShowInfoTitle">{vehicle.vehicleType}</span>
                         </div>
+                        <span className="vehicleShowTitle">Registration Date</span>
+                        <div className="vehicleShowInfo">
+                            <CalendarToday className="vehicleShowIcon" />
+                            <span className="vehicleShowInfoTitle">{vehicle.vehicleRegistrationDate}</span>
+                        </div>
                         <span className="vehicleShowTitle">Vehicle Number</span>
                         <div className="vehicleShowInfo">
                             <Ballot className="vehicleShowIcon" />
                             <span className="vehicleShowInfoTitle">{vehicle.vehicleNumber}</span>
                         </div>
+                        <span className="vehicleShowTitle">Engine Capacity</span>
+                        <div className="vehicleShowInfo">
+                            <ClosedCaption className="vehicleShowIcon" />
+                            <span className="vehicleShowInfoTitle">{vehicle.engineCapacity}</span>
+                        </div>
+                        <span className="vehicleShowTitle">Latest Payment Date</span>
+                        <div className="vehicleShowInfo">
+                            <EventAvailable className="vehicleShowIcon" />
+                            <span className="vehicleShowInfoTitle">{vehicle.latestPaymentDate}</span>
+                        </div>
+                        <span className="vehicleShowTitle">Registered By</span>
+                        <div className="vehicleShowInfo">
+                            <PermIdentityRounded className="vehicleShowIcon" />
+                            <span className="vehicleShowInfoTitle">{vehicle.uploadedBy.userName}</span>
+                        </div>
+
                         <Link to={`/vehicles/${vehicle._id}`} className="vehicleBottom">
                             <div className="vehicleDelete">
                                 <Delete className="vehicleShowIcon" />
-                                <button className="vehicleDeleteButton">View</button>
+                                <button className="vehicleDeleteButton">Delete</button>
                             </div>
                         </Link>
                     </Fragment>

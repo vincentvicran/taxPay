@@ -32,6 +32,7 @@ const VehicleList = () => {
                 </div>
             ) : (
                 vehicles.map((vehicle) => {
+                    //* for each loop for vehicles array
                     return <VehicleItem key={vehicle._id} vehicle={vehicle} />;
                 })
             )}

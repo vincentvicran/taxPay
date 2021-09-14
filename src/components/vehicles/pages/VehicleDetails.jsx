@@ -85,7 +85,7 @@ export function VehicleDetails() {
                                     <span className="vehicleShowTitle">Registered By</span>
                                     <div className="vehicleShowInfo">
                                         <PermIdentityRounded className="vehicleShowIcon" />
-                                        <span className="vehicleShowInfoTitle">{vehicle.uploadedBy}</span>
+                                        <span className="vehicleShowInfoTitle">{vehicle.uploadedBy.userName}</span>
                                     </div>
                                     <div className="vehicleBottom">
                                         <div className="vehicleEdit">

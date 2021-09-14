@@ -83,10 +83,10 @@ export function Vehicle() {
                                         <span className="vehicleShowInfoTitle">{vehicle.latestPaymentDate}</span>
                                     </div>
                                     <span className="vehicleShowTitle">Registered By</span>
-                                    <div className="vehicleShowInfo">
+                                    {/* <div className="vehicleShowInfo">
                                         <PermIdentityRounded className="vehicleShowIcon" />
                                         <span className="vehicleShowInfoTitle">{vehicle.uploadedBy}</span>
-                                    </div>
+                                    </div> */}
                                     <div className="vehicleBottom">
                                         <div className="vehicleEdit">
                                             <EditSharp className="vehicleShowIcon" />
