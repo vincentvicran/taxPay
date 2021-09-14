@@ -20,9 +20,11 @@ import { loadUser } from './actions/userActions';
 import store from './store';
 
 import ProtectedRoute from './routes/ProtectedRoute';
+import { updateAccessToken } from './utils/request';
 
 export default function App() {
     useEffect(() => {
+        updateAccessToken();
         store.dispatch(loadUser());
     });
     return (

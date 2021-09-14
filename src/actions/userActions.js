@@ -39,6 +39,7 @@ export const login = (userEmail, userPassword) => async (dispatch) => {
 
         const { data } = await source.postLogin(userEmail, userPassword);
 
+        console.log(data);
         dispatch({
             type: LOGIN_SUCCESS,
             payload: data.user,
@@ -79,11 +80,10 @@ export const loadUser = () => async (dispatch) => {
             type: LOAD_USER_REQUEST,
         });
 
-        const { data } = await source.getUser();
+        const { data } = await source.getMe();
 
         dispatch({
             type: LOAD_USER_SUCCESS,
-            // payload: data.data.user,
             payload: data.user,
         });
     } catch (error) {

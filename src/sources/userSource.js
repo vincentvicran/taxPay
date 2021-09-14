@@ -1,6 +1,6 @@
-import { request } from '../utils/request';
+import { request, updateAccessToken } from '../utils/request';
 
-export const getUser = () => {
+export const getUsers = () => {
     return request.get('users');
 };
 
@@ -21,7 +21,7 @@ export const patchUser = (userData) => {
 };
 
 export const patchPassword = (passwords) => {
-    return request.patch('users/updatepassword', { passwords });
+    return request.patch('users/updatepassword', passwords);
 };
 
 export const getUserOut = () => {
@@ -33,5 +33,5 @@ export const postForgotPassword = (userEmail) => {
 };
 
 export const postResetPassword = (token, passwords) => {
-    return request.patch(`users/resetpassword/${token}`, { passwords });
+    return request.patch(`users/resetpassword/${token}`, passwords);
 };
