@@ -20,7 +20,7 @@ const VehicleList = () => {
             return alert.error(error);
         }
 
-        alert.success('Success!');
+        alert.success('Vehicles loaded successfully!');
         dispatch(getVehicles());
     }, [dispatch, alert, error]);
 

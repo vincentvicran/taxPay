@@ -6,15 +6,33 @@ import {
     PermIdentity,
     Ballot,
     EventAvailable,
-    EditSharp,
     Delete,
     PermIdentityRounded,
 } from '@material-ui/icons';
 import '.././shared/styles/vehicles.css';
-
-import { Link } from 'react-router-dom';
+import { deleteVehicle, getVehicles } from '../../../actions/vehicleActions';
+import { useHistory } from 'react-router';
+import { useAlert } from 'react-alert';
+import { useDispatch, useSelector } from 'react-redux';
 
 function VehicleItem({ vehicle, edit }) {
+    const history = useHistory();
+    const alert = useAlert();
+    const dispatch = useDispatch();
+
+    const { error } = useSelector((state) => state.vehicles);
+
+    const delVehicle = () => {
+        dispatch(deleteVehicle(vehicle._id));
+        if (error) {
+            alert.error(error);
+        } else {
+            alert.success('Requested Vehicle Deleted Successfully!');
+            dispatch(getVehicles());
+            history.push('/vehicles');
+        }
+    };
+
     if (vehicle.length !== 0) {
         return (
             <div className="vehicleShow">
@@ -56,15 +74,15 @@ function VehicleItem({ vehicle, edit }) {
                             <span className="vehicleShowInfoTitle">{vehicle.uploadedBy.userName}</span>
                         </div>
 
-                        <Link to={`/vehicles/${vehicle._id}`} className="vehicleBottom">
-                            <div className="vehicleDelete">
+                        <div className="vehicleBottom">
+                            <div className="vehicleDelete" onClick={delVehicle}>
                                 <Delete className="vehicleShowIcon" />
                                 <button className="vehicleDeleteButton">Delete</button>
                             </div>
-                        </Link>
+                        </div>
                     </Fragment>
                 )}
-                {edit && (
+                {/* {edit && (
                     <Fragment>
                         <span className="vehicleShowTitle">Owner Name</span>
                         <div className="vehicleShowInfo">
@@ -112,7 +130,7 @@ function VehicleItem({ vehicle, edit }) {
                             </div>
                         </div>
                     </Fragment>
-                )}
+                )} */}
             </div>
         );
     }
