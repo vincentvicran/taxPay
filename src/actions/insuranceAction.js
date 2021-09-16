@@ -6,6 +6,7 @@ import {
     ADD_INSURANCE_REQUEST,
     ADD_INSURANCE_SUCCESS,
     ADD_INSURANCE_FAIL,
+    CLEAR_ERRORS,
 } from '../constants/insuranceConstants';
 
 export const getInsurances = () => async (dispatch) => {
@@ -28,13 +29,19 @@ export const getInsurances = () => async (dispatch) => {
     }
 };
 
-export const addInsurance = (vehicleId) => async (dispatch) => {
+export const addInsurance = (vehicleId, insuranceData) => async (dispatch) => {
     try {
         dispatch({
             type: ADD_INSURANCE_REQUEST,
         });
 
-        const { data } = await axios.post(`api/v1/insurances/${vehicleId}`);
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        };
+
+        const { data } = await axios.post(`api/v1/insurances/${vehicleId}`, insuranceData, config);
 
         dispatch({
             type: ADD_INSURANCE_SUCCESS,
@@ -46,4 +53,12 @@ export const addInsurance = (vehicleId) => async (dispatch) => {
             payload: error.response.data.message,
         });
     }
+};
+
+//! CLEAR ERRORS
+
+export const clearErrors = () => async (dispatch) => {
+    dispatch({
+        type: CLEAR_ERRORS,
+    });
 };
