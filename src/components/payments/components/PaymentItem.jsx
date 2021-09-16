@@ -9,12 +9,12 @@ function PaymentItem({ payment }) {
                 <span className="paymentShowTitle">Payor</span>
                 <div className="paymentShowInfo">
                     <PermIdentity className="paymentShowIcon" />
-                    <span className="paymentShowInfoTitle">{payment.payor}</span>
+                    <span className="paymentShowInfoTitle">{payment.payor.userName}</span>
                 </div>
                 <span className="paymentShowTitle">Vehicle Number</span>
                 <div className="paymentShowInfo">
                     <Ballot className="paymentShowIcon" />
-                    <span className="paymentShowInfoTitle">{payment.vehicle}</span>
+                    <span className="paymentShowInfoTitle">{payment.vehicle.vehicleNumber}</span>
                 </div>
                 <span className="paymentShowTitle">Amount</span>
                 <div className="paymentShowInfo">
