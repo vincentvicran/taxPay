@@ -1,7 +1,48 @@
-import React from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import AddIcon from '@material-ui/icons/Add';
 
+import { useHistory } from 'react-router-dom';
+import Loader from '../../../Loader';
+import { useAlert } from 'react-alert';
+import { useDispatch, useSelector } from 'react-redux';
+
 function AddInsurance() {
+    // //* make a insurance state using useState
+    // const [insurance, setInsurance] = useState({
+    //     insuranceType: '',
+    //     insuranceDOI: '',
+    //     insuranceDOE: '',
+    // });
+
+    // //* destructuring initialization of insurance state
+    // const { insuranceType, insuranceDOI, insuranceDOE } = insurance;
+
+    // //* history, dispatch, alert initialization
+    // const history = useHistory();
+    // const dispatch = useDispatch();
+    // const alert = useAlert();
+
+    // //* calling insurances store from the store.js using useSelector
+    // const { loading, error } = useSelector((state) => state.insurances);
+
+    // //* useEffect for showing error
+    // useEffect(() => {
+    //     if (error) {
+    //         alert.error(error);
+
+    //         dispatch(clearErrors());
+    //     }
+    // }, []);
+
+    // //* submitHandler function definition
+    // const submitHandler = (e) => {
+    //     e.preventDefault();
+
+    //     dispatch(addInsurance());
+    // };
+
+    //* onChange function definition using setInsurance
+
     return (
         <div className="insurances">
             <div className="insuranceBody">

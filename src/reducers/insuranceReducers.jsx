@@ -22,8 +22,8 @@ export const insurancesReducer = (state = { insurances: [] }, action) => {
 
         case ALL_INSURANCES_FAIL:
             return {
+                ...state,
                 loading: false,
-                insurances: null,
                 error: action.payload,
             };
 
@@ -32,6 +32,7 @@ export const insurancesReducer = (state = { insurances: [] }, action) => {
                 ...state,
                 error: null,
             };
+
         default:
             return state;
     }

@@ -1,30 +1,42 @@
-import React from 'react';
+import React, { Fragment, useEffect } from 'react';
 import InsuranceItem from '../components/InsuranceItem';
 import '.././shared/styles/insurances.css';
 
-const insurances = [
-    {
-        __id: '1',
-        payor: 'vincy967',
-        vehicle: 'Ba.45Pa.1231',
-        insuranceDOI: '2019-11-22',
-        insuranceType: 'TwoWheeler',
-        insuranceDOE: '2020-12-22',
-    },
-    {
-        __id: '2',
-        payor: 'terenam967',
-        vehicle: 'Ba.45Pa.7777',
-        insuranceDOI: '2020-08-22',
-        insuranceType: 'TwoWheeler',
-        insuranceDOE: '2021-08-31',
-    },
-];
+import { useDispatch, useSelector } from 'react-redux';
+import { getInsurances } from '../../../actions/insuranceAction';
+import { useAlert } from 'react-alert';
+
+import Loader from '../../.././Loader';
 
 function InsuranceList() {
-    return insurances.map((insurance) => {
-        return <InsuranceItem insurance={insurance} />;
-    });
+    const alert = useAlert();
+    const dispatch = useDispatch();
+
+    const { loading, error, insurances } = useSelector((state) => state.insurances);
+
+    useEffect(() => {
+        if (error) {
+            return alert.error(error);
+        }
+
+        alert.success('Insurances loaded successfully!');
+        dispatch(getInsurances());
+    }, [dispatch, alert, error]);
+
+    //! condition?true:false
+    return (
+        <Fragment>
+            {loading ? (
+                <div style={{ padding: '90px 50% 400px' }}>
+                    <Loader />
+                </div>
+            ) : (
+                insurances.map((insurance) => {
+                    return <InsuranceItem insurance={insurance} />;
+                })
+            )}
+        </Fragment>
+    );
 }
 
 export default InsuranceList;

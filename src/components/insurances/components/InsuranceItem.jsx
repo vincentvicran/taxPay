@@ -16,12 +16,12 @@ function InsuranceItem({ insurance }) {
                 <span className="insuranceShowTitle">Payor</span>
                 <div className="insuranceShowInfo">
                     <PermIdentity className="insuranceShowIcon" />
-                    <span className="insuranceShowInfoTitle">{insurance.payor}</span>
+                    <span className="insuranceShowInfoTitle">{insurance.payor.userName}</span>
                 </div>
                 <span className="insuranceShowTitle">Vehicle Number</span>
                 <div className="insuranceShowInfo">
                     <Ballot className="insuranceShowIcon" />
-                    <span className="insuranceShowInfoTitle">{insurance.vehicle}</span>
+                    <span className="insuranceShowInfoTitle">{insurance.vehicle.vehicleNumber}</span>
                 </div>
                 <span className="insuranceShowTitle">Insurance Type</span>
                 <div className="insuranceShowInfo">
