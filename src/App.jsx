@@ -15,6 +15,7 @@ import Payments from './components/payments/pages/Payments';
 import AddPayment from './components/payments/pages/AddPayment';
 import Auth from './components/auth/pages/Auth';
 // import Vehicle from './components/vehicles/pages/Vehicle';
+import TaxRates from './components/taxRates/TaxRates';
 
 import { loadUser } from './actions/userActions';
 import store from './store';
@@ -40,6 +41,7 @@ export default function App() {
                 <ProtectedRoute exact path="/addinsurance" component={AddInsurance} />
                 <ProtectedRoute exact path="/payments" component={Payments} />
                 <ProtectedRoute exact path="/addpayment" component={AddPayment} />
+                <Route exact path="/taxrates" component={TaxRates} />
                 <Route path="/login" children={<Auth login />} />
                 <Route path="/register" children={<Auth register />} />
                 <Route path="/forgotpassword" children={<Auth forgotpassword />} />

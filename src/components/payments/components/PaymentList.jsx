@@ -41,7 +41,6 @@ function PaymentList() {
         dispatch(getPayments());
     }, [dispatch, alert, error]);
 
-    //! condition?true:false
     return (
         <Fragment>
             {loading ? (
