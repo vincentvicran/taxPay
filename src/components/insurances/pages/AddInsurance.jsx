@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import Dropdown from 'react-dropdown';
+import axios from 'axios';
 import AddIcon from '@material-ui/icons/Add';
 
 import { useHistory } from 'react-router-dom';
@@ -7,8 +7,7 @@ import Loader from '../../../Loader';
 import { useAlert } from 'react-alert';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { clearErrors, addInsurance } from '../../../actions/insuranceAction';
-import { getVehicles } from '../../../actions/vehicleActions';
+import { clearErrors, addInsurance, getInsurances } from '../../../actions/insuranceAction';
 
 function AddInsurance() {
     //* make a insurance state using useState
@@ -17,7 +16,10 @@ function AddInsurance() {
         insuranceDOI: '',
         insuranceDOE: '',
     });
+    const [vehicles, setVehicles] = useState([]);
     const [vehicleId, setVehicleId] = useState(null);
+    const [text, setText] = useState('');
+    const [suggestions, setSuggestions] = useState([]);
 
     //* destructuring initialization of insurance state
     const { insuranceType, insuranceDOI, insuranceDOE } = insurance;
@@ -29,13 +31,15 @@ function AddInsurance() {
 
     //* calling insurances and vehciles store from store.js using useSelector
     const { loading, error } = useSelector((state) => state.insurances);
-    const { vehicles } = useSelector((state) => state.vehicles);
+    // const { vehicles } = useSelector((state) => state.vehicles);
 
     //* useEffect for showing error
     useEffect(() => {
         async function fetchData() {
             // You can await here
-            await dispatch(getVehicles());
+            const response = await axios.get('api/v1/vehicles');
+            // console.log(response.data.vehicles);
+            setVehicles(response.data.vehicles);
         }
         if (error) {
             alert.error(error);
@@ -44,24 +48,46 @@ function AddInsurance() {
         fetchData();
     }, [dispatch, alert, error]);
 
-    var options = vehicles.map(function (vehicles, vehicle, i) {
-        vehicles[i] = vehicle;
-        return vehicles;
-    });
-
-    const defaultOption = options[0];
-    console.log(options);
-
     //* submitHandler function definition
     const submitHandler = (e) => {
         e.preventDefault();
 
         dispatch(addInsurance(vehicleId, insurance));
+
+        if (error) {
+            alert.error(error);
+            history.push('/addinsurance');
+        } else {
+            alert.success('Insurance added successfully!');
+            history.push('/insurances');
+
+            dispatch(getInsurances());
+        }
     };
 
     //* onChange function definition using setInsurance
     const onChange = (e) => {
         setInsurance({ ...insurance, [e.target.name]: e.target.value });
+    };
+
+    const onChangeHandler = (text) => {
+        let matches = [];
+
+        if (text.length > 0) {
+            matches = vehicles.filter((veh) => {
+                const regex = new RegExp(`${text}`, 'gi');
+                return veh.vehicleNumber.match(regex);
+            });
+        }
+
+        setSuggestions(matches);
+        setText(text);
+    };
+
+    const onSuggestHandler = (text, vehicleInfo) => {
+        setText(text);
+        setVehicleId(vehicleInfo);
+        setSuggestions([]);
     };
 
     return (
@@ -79,19 +105,29 @@ function AddInsurance() {
                                         <div className="insuranceAddLeft">
                                             <div className="insuranceAddItem">
                                                 <label className="insuranceShowTitle">Vehicle Number</label>
-
-                                                <Dropdown
-                                                    options={options.vehicleNumber}
+                                                <input
+                                                    type="text"
+                                                    placeholder="Third Party"
+                                                    className="insuranceAddInput"
                                                     name="vehicleNumber"
-                                                    onChange={(e) => {
-                                                        setVehicleId({
-                                                            ...vehicleId,
-                                                            [e.target.name]: [e.target.value],
-                                                        });
-                                                    }}
-                                                    value={defaultOption.vehicleId}
-                                                    placeholder="Select any vehicle number..."
+                                                    value={text}
+                                                    onChange={(e) => onChangeHandler(e.target.value)}
                                                 />
+                                                {suggestions &&
+                                                    suggestions.map((suggestions, i) => (
+                                                        <div
+                                                            key={i}
+                                                            className="suggestions"
+                                                            onClick={() =>
+                                                                onSuggestHandler(
+                                                                    suggestions.vehicleNumber,
+                                                                    suggestions._id
+                                                                )
+                                                            }
+                                                        >
+                                                            {suggestions.vehicleNumber}
+                                                        </div>
+                                                    ))}
                                             </div>
                                             <div className="insuranceAddItem">
                                                 <label className="insuranceShowTitle">Insurance Type</label>
@@ -127,7 +163,9 @@ function AddInsurance() {
                                         </div>
                                         <div className="insuranceAddBottom">
                                             <AddIcon />
-                                            <button className="insuranceAddButton">Add</button>
+                                            <button className="insuranceAddButton" onClick={submitHandler}>
+                                                Add
+                                            </button>
                                         </div>
                                     </form>
                                 </div>

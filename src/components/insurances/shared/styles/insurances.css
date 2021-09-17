@@ -140,3 +140,16 @@
     color: white;
     font-weight: 600;
 }
+
+.suggestions {
+    cursor: pointer;
+    padding: 2px 12px;
+    border-bottom: 1px solid gray;
+    border-right: 1px solid gray;
+    width: 200px;
+    border-bottom-right-radius: 7px;
+}
+
+.suggestions:hover {
+    background-color: rgb(126, 60, 173);
+}

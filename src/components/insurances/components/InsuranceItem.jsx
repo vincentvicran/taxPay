@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-    Ballot,
-    EventAvailableOutlined,
-    EventBusyOutlined,
-    EditSharp,
-    PermIdentity,
-    Receipt,
-} from '@material-ui/icons';
+import { Ballot, EventAvailableOutlined, EventBusyOutlined, PermIdentity, Receipt } from '@material-ui/icons';
 import '.././shared/styles/insurances.css';
 
 function InsuranceItem({ insurance }) {
@@ -38,10 +31,10 @@ function InsuranceItem({ insurance }) {
                     <EventBusyOutlined className="insuranceShowIcon" />
                     <span className="insuranceShowInfoTitle">{insurance.insuranceDOE}</span>
                 </div>
-                <div className="insuranceEditBottom">
+                {/* <div className="insuranceEditBottom">
                     <EditSharp />
                     <button className="insuranceEditButton">Edit</button>
-                </div>
+                </div> */}
             </div>
         );
     }
