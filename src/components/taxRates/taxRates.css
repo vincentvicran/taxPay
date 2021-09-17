@@ -2,7 +2,7 @@
     padding: 15px;
     text-align: center;
     font-size: large;
-    font-weight: bold;
+    font-weight: bolder;
 }
 .sectionTitle {
     /* flex: 100%; */
@@ -43,7 +43,7 @@ th {
     text-align: left;
 }
 .note {
-    text-align: justify;
+    font-size: 12px;
 }
 .rightSection {
     display: flex;
@@ -52,6 +52,10 @@ th {
     flex-wrap: wrap;
     flex-direction: column;
 }
+hr {
+    align-self: center;
+    width: 60%;
+}
 .fourWheeler {
     display: flex;
     justify-content: center;
@@ -59,8 +63,8 @@ th {
     flex-wrap: wrap;
 }
 .fourWheelerTitle {
-    padding: 15px;
+    padding: 7px;
     text-align: center;
     font-size: large;
-    font-weight: bold;
+    font-weight: bolder;
 }

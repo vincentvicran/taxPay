@@ -48,7 +48,9 @@ const TaxRates = () => {
                             <td colspan="3"> </td>
                         </tr>
                         <tr>
-                            <td colspan="3">Note: Rs. 300 will be added on Tax amount per year as renewal charge.</td>
+                            <td colspan="3" className="note">
+                                Note: Rs. 300 will be added on Tax amount per year as renewal charge.
+                            </td>
                         </tr>
                     </table>
                 </div>
@@ -80,13 +82,14 @@ const TaxRates = () => {
                             <td colspan="3"> </td>
                         </tr>
                         <tr>
-                            <td colspan="3">
+                            <td colspan="3" className="note">
                                 Note : As per the rule of Government of Nepal, Third Party Insurance is compulsory.
                             </td>
                         </tr>
                     </table>
                 </div>
             </div>
+            <hr />
             <div className="fourWheelerTitle">Four Wheeler</div>
             <div className="fourWheeler">
                 <br />
@@ -138,7 +141,9 @@ const TaxRates = () => {
                             <td colspan="3"> </td>
                         </tr>
                         <tr>
-                            <td colspan="3">Note: Rs. 400 will be added on Tax amount per year as renewal charge.</td>
+                            <td colspan="3" className="note">
+                                Note: Rs. 400 will be added on Tax amount per year as renewal charge.
+                            </td>
                         </tr>
                     </table>
                 </div>
@@ -170,7 +175,7 @@ const TaxRates = () => {
                             <td colspan="3"> </td>
                         </tr>
                         <tr>
-                            <td colspan="3">
+                            <td colspan="3" className="note">
                                 Note : As per the rule of Government of Nepal, Third Party Insurance is compulsory.
                             </td>
                         </tr>
