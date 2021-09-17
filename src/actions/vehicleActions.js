@@ -43,8 +43,6 @@ export const loadVehicle = (id) => async (dispatch) => {
             type: LOAD_VEHICLE_REQUEST,
         });
 
-        console.log(id);
-
         const { data } = await axios.get(`api/v1/vehicles/${id}`);
 
         dispatch({

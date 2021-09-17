@@ -41,12 +41,13 @@ function AddInsurance() {
             // console.log(response.data.vehicles);
             setVehicles(response.data.vehicles);
         }
+        fetchData();
         if (error) {
             alert.error(error);
+            history.push('/addinsurance');
             dispatch(clearErrors());
         }
-        fetchData();
-    }, [dispatch, alert, error]);
+    }, [dispatch, alert, history, error]);
 
     //* submitHandler function definition
     const submitHandler = (e) => {
@@ -59,8 +60,7 @@ function AddInsurance() {
             history.push('/addinsurance');
         } else {
             alert.success('Insurance added successfully!');
-            history.push('/insurances');
-
+            setInsurance([]);
             dispatch(getInsurances());
         }
     };

@@ -60,7 +60,7 @@ function UpdatePassword() {
                 <Fragment>
                     <div className="userUpdatePassword">
                         <span className="userUpdateTitle">Password</span>
-                        <form className="userUpdateForm" onSubmit={submitPasswordHandler}>
+                        <form className="userUpdateForm">
                             <div className="userUpdateLeft">
                                 <div className="userUpdateItem">
                                     <label className="userShowTitle">Current Password</label>
@@ -92,7 +92,9 @@ function UpdatePassword() {
                                         className="userUpdateInput"
                                     />
                                 </div>
-                                <button className="userUpdateButton">Update</button>
+                                <button className="userUpdateButton" onClick={submitPasswordHandler}>
+                                    Update
+                                </button>
                             </div>
                         </form>
                     </div>
@@ -121,9 +123,9 @@ function Profile() {
     const { loading, error, isUpdated } = useSelector((state) => state.user);
 
     useEffect(() => {
-        if (user) {
-            setUpdateUser(user);
-        }
+        // if (user) {
+        //     setUpdateUser(user);
+        // }
 
         if (error) {
             alert.error(error);
@@ -183,7 +185,7 @@ function Profile() {
                                 <div className="userUpdate">
                                     <div className="userUpdateTitle">Details</div>
 
-                                    <form className="userUpdateForm" onSubmit={submitUpdateHandler}>
+                                    <form className="userUpdateForm">
                                         <div className="userUpdateLeft">
                                             {/* <div className="userUpdateItem">
                                         <label>Full Name</label>
@@ -231,7 +233,9 @@ function Profile() {
                                             </div>
                                         </div>
 
-                                        <button className="userUpdateButton">Update</button>
+                                        <button className="userUpdateButton" onClick={submitUpdateHandler}>
+                                            Update
+                                        </button>
                                     </form>
                                 </div>
                                 <UpdatePassword />

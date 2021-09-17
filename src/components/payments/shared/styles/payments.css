@@ -164,3 +164,38 @@
 .paymentUploadIcon {
     cursor: pointer;
 }
+
+.modalBootstrap {
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    padding: 50px 0;
+    background-color: grey;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+}
+
+.modalHeader {
+    padding: 10px;
+    color: rgb(44, 15, 65);
+}
+
+.modalTitle {
+    padding: 10px 25%;
+    font-size: 30px;
+}
+
+.modalBody {
+    padding: 0 25%;
+}
+
+.modalShowImg {
+    border-radius: 9px 0px 9px 9px;
+}
+
+.modalFooter {
+    font-style: italic;
+    font-size: 12px;
+    padding: 0px 25%;
+}

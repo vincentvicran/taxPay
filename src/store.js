@@ -5,6 +5,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { authReducer, forgotPasswordReducer, userReducer } from './reducers/userReducers';
 import { vehiclesReducer, vehicleDetailReducer } from './reducers/vehicleReducers';
 import { insurancesReducer } from './reducers/insuranceReducers';
+import { paymentsReducer } from './reducers/paymentReducer';
 
 const reducer = combineReducers({
     vehicles: vehiclesReducer,
@@ -13,6 +14,7 @@ const reducer = combineReducers({
     user: userReducer,
     forgotPassword: forgotPasswordReducer,
     insurances: insurancesReducer,
+    payments: paymentsReducer,
 });
 
 let initialState = {};

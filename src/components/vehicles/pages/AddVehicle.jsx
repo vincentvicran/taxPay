@@ -24,7 +24,7 @@ function AddVehicle() {
     const alert = useAlert();
     const dispatch = useDispatch();
 
-    const { loading, message, error } = useSelector((state) => state.vehicles);
+    const { loading, error } = useSelector((state) => state.vehicles);
 
     useEffect(() => {
         if (error) {
@@ -42,8 +42,9 @@ function AddVehicle() {
         if (error) {
             alert.error(error);
             history.push('/addvehicle');
-        } else if (message) {
+        } else {
             alert.success('Vehicle added successfully!');
+            setVehicle([]);
             dispatch(getVehicles());
         }
     };

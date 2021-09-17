@@ -20,6 +20,7 @@ import { loadUser } from './actions/userActions';
 import store from './store';
 
 import ProtectedRoute from './routes/ProtectedRoute';
+import TaxRates from './pages/taxRates/TaxRates';
 
 export default function App() {
     useEffect(() => {
@@ -40,6 +41,7 @@ export default function App() {
                 <ProtectedRoute exact path="/addinsurance" component={AddInsurance} />
                 <ProtectedRoute exact path="/payments" component={Payments} />
                 <ProtectedRoute exact path="/addpayment" component={AddPayment} />
+                <Route exact path="/taxrates" component={TaxRates} />
                 <Route path="/login" children={<Auth login />} />
                 <Route path="/register" children={<Auth register />} />
                 <Route path="/forgotpassword" children={<Auth forgotpassword />} />

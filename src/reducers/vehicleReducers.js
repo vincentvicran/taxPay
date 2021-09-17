@@ -36,6 +36,7 @@ export const vehiclesReducer = (state = { vehicles: [], vehicle: {} }, action) =
                 ...state,
                 loading: false,
                 vehicle: action.payload,
+                message: 'Success!',
             };
 
         case DELETE_VEHICLE_SUCCESS:

@@ -23,7 +23,7 @@ export const getInsurances = () => async (dispatch) => {
         });
     } catch (error) {
         dispatch({
-            ALL_INSURANCES_FAIL,
+            type: ALL_INSURANCES_FAIL,
             payload: error.response.data.message,
         });
     }
@@ -49,7 +49,7 @@ export const addInsurance = (vehicleId, insuranceData) => async (dispatch) => {
         });
     } catch (error) {
         dispatch({
-            ADD_INSURANCE_FAIL,
+            type: ADD_INSURANCE_FAIL,
             payload: error.response.data.message,
         });
     }

@@ -32,7 +32,7 @@ function InsuranceList() {
                 </div>
             ) : (
                 insurances.map((insurance) => {
-                    return <InsuranceItem insurance={insurance} />;
+                    return <InsuranceItem insurance={insurance} key={insurance._id} />;
                 })
             )}
         </Fragment>

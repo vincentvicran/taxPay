@@ -1,32 +1,32 @@
 import {
-    ALL_INSURANCES_REQUEST,
-    ALL_INSURANCES_SUCCESS,
-    ALL_INSURANCES_FAIL,
-    ADD_INSURANCE_REQUEST,
-    ADD_INSURANCE_SUCCESS,
-    ADD_INSURANCE_FAIL,
+    ALL_PAYMENTS_REQUEST,
+    ALL_PAYMENTS_SUCCESS,
+    ALL_PAYMENTS_FAIL,
+    ADD_PAYMENT_REQUEST,
+    ADD_PAYMENT_SUCCESS,
+    ADD_PAYMENT_FAIL,
     CLEAR_ERRORS,
-} from '../constants/insuranceConstants';
+} from '../constants/paymentConstants';
 
-export const insurancesReducer = (state = { insurances: [] }, action) => {
+export const paymentsReducer = (state = { payments: [] }, action) => {
     switch (action.type) {
-        case ALL_INSURANCES_REQUEST:
-        case ADD_INSURANCE_REQUEST:
+        case ALL_PAYMENTS_REQUEST:
+        case ADD_PAYMENT_REQUEST:
             return {
                 ...state,
                 loading: true,
             };
 
-        case ALL_INSURANCES_SUCCESS:
-        case ADD_INSURANCE_SUCCESS:
+        case ALL_PAYMENTS_SUCCESS:
+        case ADD_PAYMENT_SUCCESS:
             return {
                 ...state,
                 loading: false,
-                insurances: action.payload,
+                payments: action.payload,
             };
 
-        case ALL_INSURANCES_FAIL:
-        case ADD_INSURANCE_FAIL:
+        case ALL_PAYMENTS_FAIL:
+        case ADD_PAYMENT_FAIL:
             return {
                 ...state,
                 loading: false,
