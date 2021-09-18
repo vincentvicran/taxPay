@@ -58,7 +58,7 @@ function AddInsurance() {
         if (error) {
             alert.error(error);
             history.push('/addinsurance');
-        } else {
+        } else if (error === null) {
             alert.success('Insurance added successfully!');
             setInsurance([]);
             dispatch(getInsurances());

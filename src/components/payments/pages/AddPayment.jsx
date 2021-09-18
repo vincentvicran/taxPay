@@ -12,8 +12,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getPayments, clearErrors, addPayment } from '../../../actions/paymentAction';
 
 function AddPayment() {
-    //* make a insurance state using useState
+    //* make a payment state using useState
     const [paymentAmount, setPaymentAmount] = useState('');
+    const [imagePreview, setImagePreview] = useState(paymentImage);
+    const [voucherImage, setVoucherImage] = useState(null);
+
+    //* vehicle number search states
     const [vehicles, setVehicles] = useState([]);
     const [vehicleId, setVehicleId] = useState(null);
     const [text, setText] = useState('');
@@ -47,7 +51,12 @@ function AddPayment() {
     const submitHandler = (e) => {
         e.preventDefault();
 
-        dispatch(addPayment(vehicleId, paymentAmount));
+        const formData = new FormData();
+        formData.set('paymentAmount', paymentAmount);
+        formData.set('voucherImage', voucherImage);
+
+        console.log(voucherImage);
+        dispatch(addPayment(vehicleId, formData));
 
         if (error) {
             alert.error(error);
@@ -60,9 +69,9 @@ function AddPayment() {
     };
 
     //* onChange function definition using setInsurance
-    const onChange = (e) => {
-        setPaymentAmount({ [e.target.name]: [e.target.value] });
-    };
+    // const onChange = (e) => {
+    //     setPaymentAmount({ [e.target.name]: [e.target.value] });
+    // };
 
     const onChangeHandler = (text) => {
         let matches = [];
@@ -84,6 +93,20 @@ function AddPayment() {
         setSuggestions([]);
     };
 
+    const imageHandler = (e) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+            if (reader.readyState === 2) {
+                setImagePreview(reader.result);
+                // setVoucherImage(reader.result);
+            }
+        };
+
+        reader.readAsDataURL(e.target.files[0]);
+        // setImagePreview(e.target.files[0]);
+        setVoucherImage(e.target.files[0]);
+    };
+
     return (
         <Fragment>
             {loading ? (
@@ -95,9 +118,13 @@ function AddPayment() {
                             <div className="paymentTitle">Register your payment</div>
                             <div className="paymentContainer">
                                 <div className="paymentAdd">
-                                    <form className="paymentAddForm">
+                                    <form
+                                        className="paymentAddForm"
+                                        onSubmit={submitHandler}
+                                        encType="multipart/form-data"
+                                    >
                                         <div className="paymentAddLeft">
-                                            <div className="paymentAddItem">
+                                            <div div className="paymentAddItem">
                                                 <label className="paymentShowTitle">Vehicle Number</label>
                                                 <input
                                                     type="text"
@@ -131,7 +158,9 @@ function AddPayment() {
                                                     className="paymentAddInput"
                                                     name="paymentAmount"
                                                     value={paymentAmount}
-                                                    onChange={onChange}
+                                                    onChange={(e) => {
+                                                        setPaymentAmount(e.target.value);
+                                                    }}
                                                 />
                                             </div>
                                         </div>
@@ -139,11 +168,19 @@ function AddPayment() {
                                             <div className="paymentUploadImg">
                                                 <label className="paymentShowTitle">Bank Voucher</label>
 
-                                                <img src={paymentImage} alt="" className="paymentShowImg" />
+                                                <img src={imagePreview} alt="" className="paymentShowImg" />
                                                 <label htmlFor="file">
                                                     <Publish className="paymentUploadIcon" />
                                                 </label>
-                                                <input type="file" id="file" style={{ display: 'none' }} />
+                                                <input
+                                                    type="file"
+                                                    name="voucherImage"
+                                                    accept="image/*"
+                                                    multiple={false}
+                                                    id="file"
+                                                    style={{ display: 'none' }}
+                                                    onChange={imageHandler}
+                                                />
                                             </div>
                                         </div>
                                         <div className="paymentAddBottom">

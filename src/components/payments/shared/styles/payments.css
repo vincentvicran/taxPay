@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: center;
     margin: 0 10%;
-    padding: 20px 20px 47px;
+    padding: 20px 20px 10%;
     flex-wrap: wrap;
 }
 
@@ -182,20 +182,21 @@
 }
 
 .modalTitle {
-    padding: 10px 25%;
+    padding: 10px 5%;
     font-size: 30px;
 }
 
 .modalBody {
-    padding: 0 25%;
+    padding: 0 5%;
 }
 
 .modalShowImg {
     border-radius: 9px 0px 9px 9px;
+    height: 70vh;
 }
 
 .modalFooter {
     font-style: italic;
     font-size: 12px;
-    padding: 0px 25%;
+    padding: 0px 5%;
 }
