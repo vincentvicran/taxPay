@@ -1,0 +1,17 @@
+.modal {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-color: grey;
+    opacity: 0.8;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.modalContainer {
+    width: 1200px;
+    height: 600px;
+    background-image: linear-gradient(to top right, rgb(213, 255, 174), rgb(211, 211, 211), rgb(166, 178, 248));
+    text-align: center;
+    opacity: 1;
+}

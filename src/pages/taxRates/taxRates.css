@@ -1,0 +1,74 @@
+.taxRate {
+    padding: 10px 0 10%;
+}
+
+.twoWheelerTitle {
+    padding: 15px;
+    text-align: center;
+    font-size: large;
+    font-weight: bolder;
+}
+.sectionTitle {
+    /* flex: 100%; */
+    font-weight: 800;
+}
+
+.twoWheelerSection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* flex-flow: column wrap; */
+}
+
+.leftSection {
+    display: flex;
+    padding: 5px;
+    margin: 5px;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+table {
+    /* display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-direction: column; */
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    margin: 10px;
+    padding: 23px 25px 0 25px;
+}
+.blankRow {
+    height: 10px;
+}
+
+th {
+    text-align: left;
+}
+.note {
+    font-size: 12px;
+}
+.rightSection {
+    display: flex;
+    padding: 5px;
+    margin: 5px;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+hr {
+    align-self: center;
+    width: 60%;
+}
+.fourWheeler {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.fourWheelerTitle {
+    padding: 7px;
+    text-align: center;
+    font-size: large;
+    font-weight: bolder;
+}

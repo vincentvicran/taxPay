@@ -1,0 +1,202 @@
+/* .payments {
+    background-image: linear-gradient(to top right, rgb(213, 255, 174), rgb(211, 211, 211), rgb(166, 178, 248));
+} */
+
+.paymentBody {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10%;
+    padding: 20px 20px 10%;
+    flex-wrap: wrap;
+}
+
+.paymentTitle {
+    display: flex;
+    font-size: 30px;
+    flex: 100%;
+    padding: 0 20px 30px;
+}
+
+.paymentContainer {
+    display: flex;
+    flex: 3;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 12%;
+}
+
+.paymentShow,
+.paymentAddNew {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 300px;
+    height: 80%;
+    margin: 10px;
+    padding: 50px;
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+
+.paymentShowTitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: indigo;
+    padding: 0px;
+}
+
+.paymentShowInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0px 10px 10px;
+    color: #444;
+}
+
+.paymentShowIcon {
+    font-size: 16px !important;
+}
+
+.paymentShowInfoTitle {
+    margin-left: 10px;
+}
+
+.paymentAddNew {
+    padding: 199px 0;
+    align-items: center;
+}
+
+.paymentAdd {
+    padding: 0 30px;
+
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+
+.paymentAddForm {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 25px;
+}
+
+.paymentAddItem {
+    display: flex;
+    flex-direction: column;
+    margin: 25px;
+}
+
+.paymentAddItem > label {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.paymentAddInput {
+    font-size: 12px;
+    font-weight: 400;
+    background: transparent;
+    height: 30px;
+    width: 200px;
+    border: none;
+    color: gray;
+    padding: 10px;
+    border-bottom: 1px solid gray;
+}
+
+.paymentAddBottom {
+    display: flex;
+    flex: 100%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 10% 0;
+}
+
+.paymentAddButton {
+    border-radius: 7px 0 7px 7px;
+    border: none;
+    padding: 10px;
+    background-color: indigo;
+    color: white;
+    font-weight: 600;
+}
+
+/* .paymentEditBottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.paymentEditButton {
+    border-radius: 7px 0 7px 7px;
+    border: none;
+    background-color: indigo;
+    color: white;
+    font-weight: 600;
+} */
+
+.paymentShowImg {
+    width: 100px;
+    height: 90px;
+    border-radius: 14px 0 14px 14px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.paymentUploadImg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 10%;
+}
+
+.paymentUploadImg .paymentShowTitle {
+    padding: 20px;
+}
+
+.paymentUploadIcon {
+    cursor: pointer;
+}
+
+.modalBootstrap {
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    padding: 50px 0;
+    background-color: grey;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+}
+
+.modalHeader {
+    padding: 10px;
+    color: rgb(44, 15, 65);
+}
+
+.modalTitle {
+    padding: 10px 5%;
+    font-size: 30px;
+}
+
+.modalBody {
+    padding: 0 5%;
+}
+
+.modalShowImg {
+    border-radius: 9px 0px 9px 9px;
+    height: 70vh;
+}
+
+.modalFooter {
+    font-style: italic;
+    font-size: 12px;
+    padding: 0px 5%;
+}

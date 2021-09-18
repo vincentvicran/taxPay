@@ -1,0 +1,155 @@
+/* .insurances {
+    background-image: linear-gradient(to top right, rgb(213, 255, 174), rgb(211, 211, 211), rgb(166, 178, 248));
+} */
+
+.insuranceBody {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10%;
+    padding: 20px 20px 47px;
+    flex-wrap: wrap;
+}
+
+.insuranceTitle {
+    display: flex;
+    font-size: 30px;
+    flex: 100%;
+    padding: 0 20px 30px;
+}
+
+.insuranceContainer {
+    display: flex;
+    flex: 3;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 20%;
+}
+
+.insuranceShow,
+.insuranceAddNew {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 300px;
+    margin: 10px;
+    padding: 50px;
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+
+.insuranceShowTitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: indigo;
+    padding: 0px;
+}
+
+.insuranceShowInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0px 10px 10px;
+    color: #444;
+}
+
+.insuranceShowIcon {
+    font-size: 16px !important;
+}
+
+.insuranceShowInfoTitle {
+    margin-left: 10px;
+}
+
+.insuranceAddNew {
+    padding: 190px 0;
+    align-items: center;
+}
+
+.insuranceAdd {
+    padding: 0px 30px;
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+
+.insuranceAddForm {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.insuranceAddItem {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+}
+
+.insuranceAddItem > label {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.insuranceAddInput {
+    font-size: 12px;
+    font-weight: 400;
+    background: transparent;
+    height: 25px;
+    width: 200px;
+    border: none;
+    color: gray;
+    padding: 10px;
+    border-bottom: 1px solid gray;
+}
+
+.insuranceAddBottom {
+    display: flex;
+    flex: 100%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 15px 0;
+}
+
+.insuranceAddButton {
+    border-radius: 7px 0 7px 7px;
+    border: none;
+    padding: 10px;
+    background-color: indigo;
+    color: white;
+    font-weight: 600;
+}
+
+.insuranceEditBottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    cursor: pointer;
+    padding: 10% 0 0;
+}
+
+.insuranceEditButton {
+    border-radius: 7px 0 7px 7px;
+    border: none;
+    background-color: indigo;
+    color: white;
+    font-weight: 600;
+}
+
+.suggestions {
+    cursor: pointer;
+    padding: 2px 12px;
+    border-bottom: 1px solid gray;
+    border-right: 1px solid gray;
+    width: 200px;
+    border-bottom-right-radius: 7px;
+}
+
+.suggestions:hover {
+    background-color: rgb(126, 60, 173);
+}

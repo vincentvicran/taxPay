@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+/* font-family: 'Montserrat', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Jomhuria&display=swap');
+/* font-family: 'Jomhuria', cursive; */
+
+@keyframes forTitle {
+    0% {
+        color: rgb(132, 58, 252);
+        box-shadow: 6px 10px 11px 1px rgb(132, 58, 252);
+        -webkit-box-shadow: 6px 10px 11px 1px rgb(132, 58, 252);
+        -moz-box-shadow: 6px 10px 11px 1px rgb(132, 58, 252);
+    }
+    25% {
+        color: rgb(118, 35, 201);
+        box-shadow: 6px 10px 11px 1px rgb(118, 35, 201);
+        -webkit-box-shadow: 6px 10px 11px 1px rgb(118, 35, 201);
+        -moz-box-shadow: 6px 10px 11px 1px rgb(118, 35, 201);
+    }
+    50% {
+        color: rgb(96, 25, 155);
+        box-shadow: 6px 10px 11px 1px rgb(96, 25, 155);
+        -webkit-box-shadow: 6px 10px 11px 1px rgb(96, 25, 155);
+        -moz-box-shadow: 6px 10px 11px 1px rgb(96, 25, 155);
+    }
+    100% {
+        color: rgb(67, 11, 122);
+        box-shadow: 6px 10px 11px 1px rgb(67, 11, 122);
+        -webkit-box-shadow: 6px 10px 11px 1px rgb(67, 11, 122);
+        -moz-box-shadow: 6px 10px 11px 1px rgb(67, 11, 122);
+    }
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: calc(100vh - 50px);
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-image: linear-gradient(to top right, rgb(213, 255, 174), rgb(211, 211, 211), rgb(166, 178, 248));
+    background-color: rgb(211, 211, 211);
+}
+
+.homeGreeting,
+.homeFunctions,
+.outFunctions,
+.homeTitle,
+.homeTaxrates {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 20%;
+}
+
+.homeGreeting {
+    height: 15vh;
+    margin: 0 20%;
+    padding: 40px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.homeTitle {
+    padding: 30px 80px;
+    margin: 10px 20% 20px 20%;
+    font-size: 28px;
+    font-weight: 800;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 17px 0 17px 17px;
+    box-shadow: 6px 10px 11px 1px rgba(104, 15, 191, 1);
+    -webkit-box-shadow: 6px 10px 11px 1px rgba(104, 15, 191, 1);
+    -moz-box-shadow: 6px 10px 11px 1px rgba(104, 15, 191, 1);
+}
+
+.homeTitle:hover {
+    transition: all 0.3s ease 0s;
+    animation: forTitle 2s ease 0s infinite alternate;
+    font-size: 30px;
+    font-weight: 900;
+    color: rgb(99, 0, 197);
+}
+
+.homeFunctions {
+    height: 30vh;
+    list-style: decimal;
+    justify-content: space-evenly;
+}
+
+.homeFunctionItems {
+    color: black;
+    margin: 10px;
+}
+
+.homeFunctionItems:hover {
+    transition: all 0.3s ease 0s;
+    padding: 10px;
+
+    color: rgb(99, 0, 197);
+
+    border: 1px solid rgb(99, 0, 197);
+    border-radius: 7px 0 7px 7px;
+    animation: forTitle 2s ease 0s infinite alternate;
+}
+
+.homeTaxrates {
+    height: 30vh;
+    font-size: 20px;
+}
+
+.taxrates:hover {
+    transition: all 0.3s ease 0s;
+    padding: 10px;
+    border: 1px solid indigo;
+    border-radius: 7px 0 7px 7px;
+    animation: forTitle 2s ease 0s infinite alternate;
+}
+
+.outFunctions {
+    height: 30vh;
+    list-style: decimal;
+    justify-content: space-evenly;
+}
+
+.outFunctionItems {
+    color: black;
+    padding: 10px;
+}
+
+.outFunctionItems:hover {
+    color: rgb(99, 0, 197);
+    /* border: 1px solid rgb(99, 0, 197);
+    border-radius: 7px 0 7px 7px;
+    transition: all 0.5s ease 0s;
+    animation: forTitle 2s ease 0s infinite alternate; */
+}

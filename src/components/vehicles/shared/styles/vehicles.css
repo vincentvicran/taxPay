@@ -1,0 +1,147 @@
+/* .vehicles {
+    background-image: linear-gradient(to top right, rgb(213, 255, 174), rgb(211, 211, 211), rgb(166, 178, 248));
+} */
+
+.vehicleBody {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10%;
+    padding: 20px 20px 47px;
+    flex-wrap: wrap;
+}
+
+.vehicleTitle {
+    display: flex;
+    font-size: 30px;
+    flex: 100%;
+    padding: 0 20px 30px;
+}
+
+.vehicleContainer {
+    display: flex;
+    flex: 3;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 20%;
+}
+
+.vehicleShow,
+.vehicleAddNew {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 300px;
+    height: 80%;
+    margin: 10px;
+    padding: 50px;
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+
+.vehicleShowTitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: indigo;
+    padding: 0px;
+}
+
+.vehicleShowInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0px 10px 10px;
+    color: #444;
+}
+
+.vehicleShowIcon {
+    font-size: 16px !important;
+}
+
+.vehicleShowInfoTitle {
+    margin-left: 10px;
+}
+
+.vehicleAddNew {
+    padding: 232px 0;
+    align-items: center;
+}
+
+.vehicleAdd {
+    padding: 30px;
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+
+.vehicleAddForm {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 25px;
+}
+
+.vehicleAddItem {
+    display: flex;
+    flex-direction: column;
+    margin: 25px;
+}
+
+.vehicleAddItem > label {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.vehicleAddInput {
+    font-size: 12px;
+    font-weight: 400;
+    background: transparent;
+    height: 30px;
+    width: 200px;
+    border: none;
+    color: gray;
+    padding: 10px;
+    border-bottom: 1px solid gray;
+}
+
+.vehicleAddBottom {
+    display: flex;
+    flex: 100%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.vehicleAddButton {
+    border-radius: 7px 0 7px 7px;
+    border: none;
+    padding: 10px;
+    background-color: indigo;
+    color: white;
+    font-weight: 600;
+}
+
+.vehicleBottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.vehicleEdit,
+.vehicleDelete {
+    margin: 8px 8px 0;
+    cursor: pointer;
+}
+
+.vehicleEditButton,
+.vehicleDeleteButton {
+    border-radius: 7px 0 7px 7px;
+    border: none;
+    background-color: indigo;
+    color: white;
+    font-weight: 600;
+    margin: 0;
+}

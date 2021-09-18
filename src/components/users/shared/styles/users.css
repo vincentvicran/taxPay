@@ -1,0 +1,226 @@
+@keyframes forInput {
+    0% {
+        color: rgb(132, 58, 252);
+        border: 1px solid rgb(132, 58, 252);
+        box-shadow: 3px 3px 6px 1px rgb(132, 58, 252);
+        -webkit-box-shadow: 3px 3px 6px 1px rgb(132, 58, 252);
+        -moz-box-shadow: 3px 3px 6px 1px rgb(132, 58, 252);
+    }
+    25% {
+        color: rgb(118, 35, 201);
+        border: 1px solid rgb(118, 35, 201);
+        box-shadow: 3px 3px 6px 1px rgb(118, 35, 201);
+        -webkit-box-shadow: 3px 3px 6px 1px rgb(118, 35, 201);
+        -moz-box-shadow: 3px 3px 6px 1px rgb(118, 35, 201);
+    }
+    50% {
+        color: rgb(96, 25, 155);
+        border: 1px solid rgb(96, 25, 155);
+        box-shadow: 3px 3px 6px 1px rgb(96, 25, 155);
+        -webkit-box-shadow: 3px 3px 6px 1px rgb(96, 25, 155);
+        -moz-box-shadow: 3px 3px 6px 1px rgb(96, 25, 155);
+    }
+    100% {
+        border: 1px solid rgb(67, 11, 122);
+        color: rgb(67, 11, 122);
+        box-shadow: 3px 3px 6px 1px rgb(67, 11, 122);
+        -webkit-box-shadow: 3px 3px 6px 1px rgb(67, 11, 122);
+        -moz-box-shadow: 3px 3px 6px 1px rgb(67, 11, 122);
+    }
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+
+    border-radius: 7px 0 7px 7px;
+    transition: all 0.5s ease 0s;
+    animation: forInput 2s ease 0s infinite alternate;
+}
+
+/* .user {
+    background-image: linear-gradient(to top right, rgb(213, 255, 174), rgb(211, 211, 211), rgb(166, 178, 248));
+} */
+
+.userBody {
+    margin: 0 10%;
+    padding: 0 0 20%;
+}
+
+.userTitleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    flex: 100%;
+}
+
+.userLogout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.userLogoutIcon {
+    color: rgb(67, 11, 122);
+}
+
+.userLogoutButton {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: none;
+    padding: 10px;
+    background-color: #3bb077;
+    border-radius: 7px 0 7px 7px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+}
+
+.userContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    padding-bottom: 10%;
+}
+
+.userShow,
+.userUpdate,
+.userUpdatePassword {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 14px;
+    padding: 20px 35px;
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+
+.userShow,
+.userUpdatePassword {
+    flex: 1;
+}
+
+.userUpdate {
+    flex: 2;
+}
+
+.userShowTop {
+    display: flex;
+    align-items: flex-start;
+}
+
+.userShowImg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.userShowTopTitle {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.userShowUsername {
+    font-weight: 600;
+}
+
+.userShowUserTitle {
+    font-weight: 300;
+}
+
+.userShowBottom {
+    margin-top: 20px;
+}
+
+.userShowTitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: indigo;
+}
+
+.userShowInfo {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    color: #444;
+}
+
+.userShowIcon {
+    font-size: 16px !important;
+}
+
+.userShowInfoTitle {
+    margin-left: 10px;
+}
+
+.userUpdateTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+    font-size: 23px;
+    font-weight: 600;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.userUpdateForm {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 3px;
+}
+
+.userUpdateLeft {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.userUpdateItem {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.userUpdateItem > label {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.userUpdateInput {
+    font-size: 12px;
+    font-weight: 400;
+    background: transparent;
+    border: none;
+    color: gray;
+    padding: 10px;
+    border-bottom: 1px solid gray;
+}
+
+.userUpdateButton {
+    border-radius: 7px 0 7px 7px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    background-color: indigo;
+    color: white;
+    font-weight: 600;
+    margin: 20px auto;
+}
+
+.userUpdatePassword .userUpdateForm {
+    margin: 15% 0px;
+}
+.userUpdatePassword .userUpdateButton {
+    margin: 40px auto 0;
+}
