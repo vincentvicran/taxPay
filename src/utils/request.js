@@ -14,13 +14,15 @@ const getUser = () => {
 };
 
 const url = {
-    base: 'http://localhost:3300/api/v1/',
+    // base: 'http://localhost:3300/api/v1/',
+    base: 'https://tax-pay.herokuapp.com/api/v1/',
 };
 
 const headers = {
     headers: {
         'Content-Type': 'application/json;charset=UTF-8',
         'Access-Control-Allow-Origin': '*',
+        withCredentials: true,
         // token: accessToken,
     },
 };
@@ -29,6 +31,7 @@ const axiosFormDataConfig = {
     headers: {
         'Content-Type': 'multipart/form-data',
         'Access-Control-Allow-Origin': '*',
+        withCredentials: true,
         // token: accessToken,
     },
 };

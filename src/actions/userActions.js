@@ -32,24 +32,25 @@ import {
 
 //* LOGIN
 export const login = (userEmail, userPassword) => async (dispatch) => {
-    try {
-        dispatch({
-            type: LOGIN_REQUEST,
-        });
+    // try {
+        // dispatch({
+        //     type: LOGIN_REQUEST,
+        // });
 
-        const { data } = await source.postLogin(userEmail, userPassword);
+        // const { data } = await source.postLogin(userEmail, userPassword);
 
-        console.log(data);
+        // console.log(data);
         dispatch({
-            type: LOGIN_SUCCESS,
-            payload: data.user,
+            // type: LOGIN_SUCCESS,
+            type:"LOGIN",
+            payload:source.postLogin(userEmail,userPassword),
         });
-    } catch (error) {
-        dispatch({
-            type: LOGIN_FAIL,
-            payload: error.response.data.message,
-        });
-    }
+    // } catch (error) {
+    //     dispatch({
+    //         type: LOGIN_FAIL,
+    //         payload: error.response.data.message,
+    //     });
+    // }
 };
 
 //* REGISTER
@@ -75,7 +76,7 @@ export const register = (userData) => async (dispatch) => {
 
 //* LOAD USER
 export const loadUser = () => async (dispatch) => {
-    try {
+    // try {
         dispatch({
             type: LOAD_USER_REQUEST,
         });
@@ -86,12 +87,12 @@ export const loadUser = () => async (dispatch) => {
             type: LOAD_USER_SUCCESS,
             payload: data.user,
         });
-    } catch (error) {
-        dispatch({
-            type: LOAD_USER_FAIL,
-            payload: error.response.data.message,
-        });
-    }
+    // } catch (error) {
+    //     dispatch({
+    //         type: LOAD_USER_FAIL,
+    //         payload: error.response.data.message,
+    //     });
+    // }
 };
 
 //* UPDATE PROFILE
