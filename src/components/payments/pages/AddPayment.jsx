@@ -42,7 +42,6 @@ function AddPayment() {
         fetchData();
         if (error) {
             alert.error(error);
-            history.push('/addpayment');
             dispatch(clearErrors());
         }
     }, [dispatch, alert, history, error]);
@@ -60,7 +59,6 @@ function AddPayment() {
 
         if (error) {
             alert.error(error);
-            history.push('/addpayment');
         } else {
             alert.success('Payment added successfully!');
             setPaymentAmount([]);

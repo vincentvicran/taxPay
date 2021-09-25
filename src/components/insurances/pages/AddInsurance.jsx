@@ -44,7 +44,6 @@ function AddInsurance() {
         fetchData();
         if (error) {
             alert.error(error);
-            history.push('/addinsurance');
             dispatch(clearErrors());
         }
     }, [dispatch, alert, history, error]);
@@ -57,7 +56,6 @@ function AddInsurance() {
 
         if (error) {
             alert.error(error);
-            history.push('/addinsurance');
         } else if (error === null) {
             alert.success('Insurance added successfully!');
             setInsurance([]);
